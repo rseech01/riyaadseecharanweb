@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riyaad Seecharan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral: #E8634A;
+    --sand: #F5EDE3;
+    --deep: #1A1A2E;
+    --teal: #2A9D8F;
+    --gold: #E9C46A;
+    --cream: #FDF8F2;
+    --slate: #4A4A5A;
+    --blush: #F4A89A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--deep);
+    overflow-x: hidden;
+  }
+
+  /* ── Grain overlay ── */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    z-index: 9999;
+  }
+
+  /* ── Navigation ── */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(253, 248, 242, 0.85);
+    border-bottom: 1px solid rgba(26, 26, 46, 0.06);
+  }
+
+  nav .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+    color: var(--deep);
+  }
+
+  nav .logo span { color: var(--coral); }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav ul a {
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--slate);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  nav ul a:hover { color: var(--coral); }
+
+  /* ── Hero ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 8rem 5vw 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    right: -10%;
+    top: -20%;
+    width: 70vw;
+    height: 70vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--blush) 0%, transparent 70%);
+    opacity: 0.25;
+    z-index: 0;
+  }
+
+  .hero-text {
+    position: relative;
+    z-index: 2;
+    animation: fadeSlideUp 1s ease-out;
+  }
+
+  .hero-text .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-text .eyebrow::before {
+    content: '';
+    width: 2.5rem;
+    height: 2px;
+    background: var(--teal);
+  }
+
+  .hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--deep);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-text h1 em {
+    font-style: italic;
+    color: var(--coral);
+    font-weight: 400;
+  }
+
+  .hero-text .subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--slate);
+    line-height: 1.7;
+    max-width: 440px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-graphic {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeSlideUp 1s ease-out 0.3s both;
+  }
+
+  .orbit-container {
+    width: 380px;
+    height: 380px;
+    position: relative;
+  }
+
+  .orbit-ring {
+    position: absolute;
+    border: 1.5px solid rgba(26, 26, 46, 0.08);
+    border-radius: 50%;
+    animation: spin 30s linear infinite;
+  }
+
+  .orbit-ring:nth-child(1) { inset: 0; }
+  .orbit-ring:nth-child(2) { inset: 40px; animation-duration: 24s; animation-direction: reverse; }
+  .orbit-ring:nth-child(3) { inset: 80px; animation-duration: 18s; }
+
+  .orbit-node {
+    position: absolute;
+    background: var(--cream);
+    border: 2px solid;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    animation: counterSpin 30s linear infinite;
+  }
+
+  .orbit-node.n1 { top: -26px; left: calc(50% - 26px); border-color: var(--coral); }
+  .orbit-node.n2 { bottom: -26px; left: calc(50% - 26px); border-color: var(--teal); animation-duration: 24s; animation-direction: reverse; }
+  .orbit-node.n3 { top: calc(50% - 26px); right: -26px; border-color: var(--gold); animation-duration: 18s; }
+
+  .orbit-center {
+    position: absolute;
+    inset: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--coral), var(--blush));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    box-shadow: 0 12px 40px rgba(232, 99, 74, 0.3);
+  }
+
+  /* ── Roles strip ── */
+  .roles-strip {
+    padding: 3rem 5vw;
+    background: var(--deep);
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .roles-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 120px,
+      rgba(255,255,255,0.02) 120px,
+      rgba(255,255,255,0.02) 121px
+    );
+  }
+
+  .role-chip {
+    position: relative;
+    padding: 1rem 2rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 4px;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.4s;
+  }
+
+  .role-chip:hover {
+    border-color: var(--coral);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(232, 99, 74, 0.15);
+  }
+
+  .role-chip .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 0.6rem;
+    vertical-align: middle;
+  }
+
+  .role-chip:nth-child(1) .dot { background: var(--coral); }
+  .role-chip:nth-child(2) .dot { background: var(--teal); }
+  .role-chip:nth-child(3) .dot { background: var(--gold); }
+  .role-chip:nth-child(4) .dot { background: var(--blush); }
+
+  /* ── Sections ── */
+  section {
+    padding: 6rem 5vw;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 3rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--coral);
+    font-weight: 400;
+  }
+
+  /* ── About ── */
+  #about {
+    background: var(--sand);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--slate);
+    font-weight: 300;
+  }
+
+  .about-text p + p { margin-top: 1.2rem; }
+
+  .stat-blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-block {
+    background: var(--cream);
+    padding: 2rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--coral);
+    transition: transform 0.3s;
+  }
+
+  .stat-block:hover { transform: translateY(-4px); }
+  .stat-block:nth-child(2) { border-left-color: var(--teal); }
+  .stat-block:nth-child(3) { border-left-color: var(--gold); }
+  .stat-block:nth-child(4) { border-left-color: var(--blush); }
+
+  .stat-block .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--deep);
+    line-height: 1;
+  }
+
+  .stat-block .label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.5rem;
+  }
+
+  /* ── Ventures ── */
+  .ventures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .venture-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(26, 26, 46, 0.06);
+    transition: all 0.4s;
+  }
+
+  .venture-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(26, 26, 46, 0.08);
+  }
+
+  .venture-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+
+  .venture-card:nth-child(1)::after { background: var(--coral); }
+  .venture-card:nth-child(2)::after { background: var(--teal); }
+  .venture-card:nth-child(3)::after { background: var(--gold); }
+  .venture-card:nth-child(4)::after { background: var(--deep); }
+
+  .venture-card .v-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .venture-card:nth-child(1) .v-icon { background: rgba(232,99,74,0.1); }
+  .venture-card:nth-child(2) .v-icon { background: rgba(42,157,143,0.1); }
+  .venture-card:nth-child(3) .v-icon { background: rgba(233,196,106,0.15); }
+  .venture-card:nth-child(4) .v-icon { background: rgba(26,26,46,0.06); }
+
+  .venture-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .venture-card .v-role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--teal);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .venture-card p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--slate);
+    font-weight: 300;
+  }
+
+  /* ── Community ── */
+  #community {
+    background: var(--deep);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #community::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(42,157,143,0.15), transparent 70%);
+  }
+
+  #community .section-title { color: white; }
+  #community .section-title em { color: var(--gold); }
+
+  .community-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .community-item {
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    transition: all 0.3s;
+  }
+
+  .community-item:hover {
+    border-color: rgba(233,196,106,0.3);
+    background: rgba(255,255,255,0.03);
+  }
+
+  .community-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .community-item .ci-role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .community-item p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+  }
+
+  /* ── Footer ── */
+  footer {
+    padding: 3rem 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(26,26,46,0.08);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  footer .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+  }
+
+  footer .footer-logo span { color: var(--coral); }
+
+  footer .footer-location {
+    font-size: 0.82rem;
+    color: var(--slate);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  footer .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(74,74,90,0.5);
+  }
+
+  /* ── Animations ── */
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes counterSpin {
+    to { transform: rotate(-360deg); }
+  }
+
+  /* ── Scroll reveals ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { gap: 1rem; }
+    nav ul a { font-size: 0.72rem; }
+    .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; }
+    .hero-graphic { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    section { padding: 4rem 1.5rem; }
+    .roles-strip { gap: 1rem; padding: 2rem 1.5rem; }
+    .role-chip { padding: 0.7rem 1.2rem; font-size: 0.72rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="logo">RS<span>.</span></div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#community">Community</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="eyebrow">Miami, FL — Innovation &amp; Health Tech</div>
+    <h1>Riyaad<br><em>Seecharan</em></h1>
+    <p class="subtitle">Building at the intersection of public innovation, healthcare technology, and civic infrastructure — from county government to startup trenches.</p>
+  </div>
+  <div class="hero-graphic">
+    <div class="orbit-container">
+      <div class="orbit-ring" style="inset: 0;">
+        <div class="orbit-node n1">🏛️</div>
+      </div>
+      <div class="orbit-ring" style="inset: 40px;">
+        <div class="orbit-node n2">💊</div>
+      </div>
+      <div class="orbit-ring" style="inset: 80px;">
+        <div class="orbit-node n3">⚡</div>
+      </div>
+      <div class="orbit-center">RS</div>
+    </div>
+  </div>
+</section>
+
+<!-- Roles Strip -->
+<div class="roles-strip">
+  <div class="role-chip"><span class="dot"></span>Pilot Manager — MDIA</div>
+  <div class="role-chip"><span class="dot"></span>CTO — ELMC Rx Solutions</div>
+  <div class="role-chip"><span class="dot"></span>Baptist Knight Innovation Fellow</div>
+  <div class="role-chip"><span class="dot"></span>Founder — Seecharan Group</div>
+</div>
+
+<!-- About -->
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="section-label">001 / Background</div>
+      <div class="section-title">Technology meets <em>public purpose</em></div>
+      <div class="about-text">
+        <p>A serial healthcare technology entrepreneur turned public innovator. At the Miami-Dade Innovation Authority, I manage technology demonstration pilots connecting startups with county data across transportation, solid waste, and water/sewer infrastructure.</p>
+        <p>Previously co-founded Tesser Health and EyeCheq, raising ~$7M at ~$40M valuation, and led Microsoft's acquisition of EisenWorld. My work spans HIPAA-compliant platforms, SaaS architecture, and now — civic technology that serves millions.</p>
+        <p>Rooted in the Caribbean, connected to St. Vincent and the Grenadines and Trinidad and Tobago, building in Miami.</p>
+      </div>
+    </div>
+    <div class="stat-blocks reveal">
+      <div class="stat-block">
+        <div class="number">~$7M</div>
+        <div class="label">Capital Raised</div>
+      </div>
+      <div class="stat-block">
+        <div class="number">~$40M</div>
+        <div class="label">Venture Valuation</div>
+      </div>
+      <div class="stat-block">
+        <div class="number">3+</div>
+        <div class="label">Companies Founded</div>
+      </div>
+      <div class="stat-block">
+        <div class="number">1</div>
+        <div class="label">Microsoft Acquisition</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ventures -->
+<section id="ventures">
+  <div class="section-label reveal">002 / Ventures</div>
+  <div class="section-title reveal">Where I <em>build</em></div>
+  <div class="ventures-grid">
+    <div class="venture-card reveal">
+      <div class="v-icon">🏛️</div>
+      <h3>Miami-Dade Innovation Authority</h3>
+      <div class="v-role">Pilot Manager</div>
+      <p>Managing technology demonstration pilots with startups leveraging county data. Overseeing Project Development Agreements across departments — from predictive maintenance to IoT-enabled municipal water infrastructure.</p>
+    </div>
+    <div class="venture-card reveal">
+      <div class="v-icon">💊</div>
+      <h3>ELMC Rx Solutions</h3>
+      <div class="v-role">Chief Technology Officer</div>
+      <p>Leading development of pharmacy benefit analytics tools including Rx Contract IQ — a PBM RFP analysis platform designed for benefits brokers, featuring financial modeling and multi-step intake workflows.</p>
+    </div>
+    <div class="venture-card reveal">
+      <div class="v-icon">🏥</div>
+      <h3>Baptist Knight Fellowship</h3>
+      <div class="v-role">Healthcare Innovation Fellow</div>
+      <p>Working on post-discharge care solutions addressing vulnerable patient populations and hospital readmission challenges at one of South Florida's leading health systems.</p>
+    </div>
+    <div class="venture-card reveal">
+      <div class="v-icon">🔧</div>
+      <h3>Seecharan Group LLC</h3>
+      <div class="v-role">Founder</div>
+      <p>Holding entity for independent consulting, technology advisory, and real estate operations. Bridging healthcare technology expertise with civic innovation opportunities.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Community -->
+<section id="community">
+  <div class="section-label reveal" style="color: var(--gold);">003 / Community</div>
+  <div class="section-title reveal">Giving <em>back</em></div>
+  <div class="community-items">
+    <div class="community-item reveal">
+      <h4>AIRIE</h4>
+      <div class="ci-role">Board Leadership</div>
+      <p>Supporting Artists in Residence in Everglades — connecting creative practice with environmental stewardship in one of America's most vital ecosystems.</p>
+    </div>
+    <div class="community-item reveal">
+      <h4>PS 305</h4>
+      <div class="ci-role">Board Leadership</div>
+      <p>Advancing education initiatives in Miami-Dade County, bridging technology and community to strengthen public schools and student outcomes.</p>
+    </div>
+    <div class="community-item reveal">
+      <h4>NASA Consulting</h4>
+      <div class="ci-role">Past Engagement</div>
+      <p>Applied healthcare technology and data systems expertise in collaboration with one of the world's foremost research and innovation agencies.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">RS<span>.</span></div>
+  <div class="footer-location">📍 Miami, Florida</div>
+  <div class="footer-copy">&copy; 2026 Riyaad Seecharan. All rights reserved.</div>
+</footer>
+
+<script>
+  // Scroll-based reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
