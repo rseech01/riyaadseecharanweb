@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Command *)",
+      "PowerShell(npx --yes svgexport og-image.svg og-image.png 1200:630 2>&1 | Out-String)",
+      "PowerShell(Get-ChildItem -File | Where-Object { $_.Name -in @\\('og-image.png','og-image.svg','favicon.svg','robots.txt','sitemap.xml'\\) } | Format-Table Name, Length -AutoSize)"
+    ]
+  }
+}
