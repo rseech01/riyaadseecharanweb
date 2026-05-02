@@ -28,7 +28,6 @@
     overflow-x: hidden;
   }
 
-  /* ── Grain overlay ── */
   body::after {
     content: '';
     position: fixed;
@@ -39,7 +38,6 @@
     z-index: 9999;
   }
 
-  /* ── Navigation ── */
   nav {
     position: fixed;
     top: 0;
@@ -82,7 +80,6 @@
 
   nav ul a:hover { color: var(--coral); }
 
-  /* ── Hero ── */
   .hero {
     min-height: 100vh;
     display: grid;
@@ -153,7 +150,7 @@
     font-weight: 300;
     color: var(--slate);
     line-height: 1.7;
-    max-width: 440px;
+    max-width: 480px;
     margin-bottom: 2.5rem;
   }
 
@@ -217,7 +214,6 @@
     box-shadow: 0 12px 40px rgba(232, 99, 74, 0.3);
   }
 
-  /* ── Roles strip ── */
   .roles-strip {
     padding: 3rem 5vw;
     background: var(--deep);
@@ -276,7 +272,6 @@
   .role-chip:nth-child(3) .dot { background: var(--gold); }
   .role-chip:nth-child(4) .dot { background: var(--blush); }
 
-  /* ── Sections ── */
   section {
     padding: 6rem 5vw;
   }
@@ -306,7 +301,6 @@
     font-weight: 400;
   }
 
-  /* ── About ── */
   #about {
     background: var(--sand);
   }
@@ -363,7 +357,79 @@
     margin-top: 0.5rem;
   }
 
-  /* ── Ventures ── */
+  /* ── Timeline / Arc ── */
+  #arc {
+    background: white;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 800px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--teal), var(--coral), var(--gold), var(--deep));
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--teal);
+    background: white;
+  }
+
+  .timeline-item:nth-child(2)::before { border-color: var(--coral); }
+  .timeline-item:nth-child(3)::before { border-color: var(--gold); }
+  .timeline-item:nth-child(4)::before { border-color: var(--deep); }
+
+  .timeline-item .t-years {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-item:nth-child(2) .t-years { color: var(--coral); }
+  .timeline-item:nth-child(3) .t-years { color: var(--gold); }
+  .timeline-item:nth-child(4) .t-years { color: var(--slate); }
+
+  .timeline-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--slate);
+    font-weight: 300;
+    max-width: 620px;
+  }
+
   .ventures-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -438,7 +504,6 @@
     font-weight: 300;
   }
 
-  /* ── Community ── */
   #community {
     background: var(--deep);
     color: white;
@@ -502,7 +567,31 @@
     font-weight: 300;
   }
 
-  /* ── Footer ── */
+  .speaking-list {
+    margin-top: 2.5rem;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .speaking-tag {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: all 0.3s;
+  }
+
+  .speaking-tag:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
   footer {
     padding: 3rem 5vw;
     display: flex;
@@ -534,7 +623,6 @@
     color: rgba(74,74,90,0.5);
   }
 
-  /* ── Animations ── */
   @keyframes fadeSlideUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -548,7 +636,6 @@
     to { transform: rotate(-360deg); }
   }
 
-  /* ── Scroll reveals ── */
   .reveal {
     opacity: 0;
     transform: translateY(24px);
@@ -560,7 +647,6 @@
     transform: translateY(0);
   }
 
-  /* ── Responsive ── */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     nav ul { gap: 1rem; }
@@ -581,6 +667,7 @@
   <div class="logo">RS<span>.</span></div>
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#arc">Arc</a></li>
     <li><a href="#ventures">Ventures</a></li>
     <li><a href="#community">Community</a></li>
   </ul>
@@ -589,9 +676,9 @@
 <!-- Hero -->
 <section class="hero">
   <div class="hero-text">
-    <div class="eyebrow">Miami, FL — Innovation &amp; Health Tech</div>
+    <div class="eyebrow">Miami, FL &mdash; Innovation &amp; Health Tech</div>
     <h1>Riyaad<br><em>Seecharan</em></h1>
-    <p class="subtitle">Building at the intersection of public innovation, healthcare technology, and civic infrastructure — from county government to startup trenches.</p>
+    <p class="subtitle">Founder, fellow, and civic technologist building at the intersection of public innovation and healthcare technology &mdash; from startup trenches and federal R&amp;D environments to the corridors of county government, often all at the same time.</p>
   </div>
   <div class="hero-graphic">
     <div class="orbit-container">
@@ -602,7 +689,7 @@
         <div class="orbit-node n2">💊</div>
       </div>
       <div class="orbit-ring" style="inset: 80px;">
-        <div class="orbit-node n3">⚡</div>
+        <div class="orbit-node n3">🚀</div>
       </div>
       <div class="orbit-center">RS</div>
     </div>
@@ -611,10 +698,10 @@
 
 <!-- Roles Strip -->
 <div class="roles-strip">
-  <div class="role-chip"><span class="dot"></span>Pilot Manager — MDIA</div>
-  <div class="role-chip"><span class="dot"></span>CTO — ELMC Rx Solutions</div>
-  <div class="role-chip"><span class="dot"></span>Baptist Knight Innovation Fellow</div>
-  <div class="role-chip"><span class="dot"></span>Founder — Seecharan Group</div>
+  <div class="role-chip"><span class="dot"></span>Pilot Manager &mdash; MDIA</div>
+  <div class="role-chip"><span class="dot"></span>CTO &mdash; ELMC Rx Solutions</div>
+  <div class="role-chip"><span class="dot"></span>Baptist Health Knight Innovation Fellow</div>
+  <div class="role-chip"><span class="dot"></span>Founder &mdash; Seecharan Group</div>
 </div>
 
 <!-- About -->
@@ -624,84 +711,126 @@
       <div class="section-label">001 / Background</div>
       <div class="section-title">Technology meets <em>public purpose</em></div>
       <div class="about-text">
-        <p>A serial healthcare technology entrepreneur turned public innovator. At the Miami-Dade Innovation Authority, I manage technology demonstration pilots connecting startups with county data across transportation, solid waste, and water/sewer infrastructure.</p>
-        <p>Previously co-founded Tesser Health and EyeCheq, raising ~$7M at ~$40M valuation, and led Microsoft's acquisition of EisenWorld. My work spans HIPAA-compliant platforms, SaaS architecture, and now — civic technology that serves millions.</p>
-        <p>Rooted in the Caribbean, connected to St. Vincent and the Grenadines and Trinidad and Tobago, building in Miami.</p>
+        <p>At the Miami-Dade Innovation Authority, Riyaad serves as Pilot Manager, running technology demonstration pilots that pair startups with county data across transportation, solid waste, and water and sewer infrastructure &mdash; the unglamorous civic plumbing that shapes daily life for millions of residents.</p>
+        <p>As a Baptist Health Knight Innovation Fellow, he works at the seam of health, technology, and community. He continues to serve as CTO of ELMC Rx Solutions, the healthcare company that acquired Tesser Health, and operates the Seecharan Group as his advisory and venture practice.</p>
+        <p>Rooted in the Caribbean with family ties to Trinidad and Tobago, he lives and builds in Miami.</p>
       </div>
     </div>
     <div class="stat-blocks reveal">
       <div class="stat-block">
-        <div class="number">~$7M</div>
+        <div class="number">$81M+</div>
+        <div class="label">Venture Value Created</div>
+      </div>
+      <div class="stat-block">
+        <div class="number">$8M</div>
         <div class="label">Capital Raised</div>
       </div>
       <div class="stat-block">
-        <div class="number">~$40M</div>
-        <div class="label">Venture Valuation</div>
-      </div>
-      <div class="stat-block">
-        <div class="number">3+</div>
+        <div class="number">5+</div>
         <div class="label">Companies Founded</div>
       </div>
       <div class="stat-block">
-        <div class="number">1</div>
-        <div class="label">Microsoft Acquisition</div>
+        <div class="number">5</div>
+        <div class="label">Successful Exits</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Arc / Timeline -->
+<section id="arc">
+  <div class="section-label reveal">002 / The Arc</div>
+  <div class="section-title reveal">From NASA to <em>civic tech</em></div>
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="t-years">1996 &ndash; 2000 &middot; NASA Kennedy Space Center</div>
+      <h3>Knowledge Management &amp; Innovation</h3>
+      <p>Inside the Center for Innovation and Knowledge Management, Riyaad contributed to early work on capturing and connecting institutional knowledge across large organizations. He worked on systems including SAGE and Expert Seeker &mdash; both built to help people locate subject-matter experts across distributed networks &mdash; as well as intranet prototypes for the International Space Station program. The throughline of that work &mdash; using software to connect people to information they couldn't otherwise reach &mdash; has quietly run through everything he's built since.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="t-years">2000 &ndash; 2006 &middot; EisenWorld &rarr; Microsoft</div>
+      <h3>Commercial Software &amp; Acquisition</h3>
+      <p>As Director of Product Development at EisenWorld, Riyaad led the team behind the PC migration tool that eventually shipped inside Windows 7 &mdash; work that culminated in the company's acquisition by Microsoft.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="t-years">2014 &ndash; Present &middot; Healthcare Technology</div>
+      <h3>Building, Scaling &amp; Exiting</h3>
+      <p>Healthcare became the focus in 2014 when he founded Tesser Health to apply behavioral science and technology to pharmacy and medical cost reduction for self-insured employers; the company was later acquired by ELMC Rx. He went on to serve as Chief Product Officer at EyeCheq, helping raise roughly $8M in Series A funding and reach a $40M valuation. Along the way he built and sold several other ventures: PxSource was acquired by RevEHR, while ClinicCover, GetPlano, and EHR were acquired by Barti Software. Across these ventures his work has covered HIPAA-compliant platforms, SaaS architecture, patient engagement, and product strategy.</p>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="t-years">Now &middot; Civic Innovation</div>
+      <h3>Miami-Dade Innovation Authority</h3>
+      <p>A serial healthcare technology entrepreneur turned public innovator. At MDIA, Riyaad manages technology demonstration pilots connecting startups with county data &mdash; bridging the gap between the startup ecosystem and the infrastructure systems that serve millions of Miami-Dade residents daily.</p>
+    </div>
+  </div>
+</section>
+
 <!-- Ventures -->
-<section id="ventures">
-  <div class="section-label reveal">002 / Ventures</div>
+<section id="ventures" style="background: var(--sand);">
+  <div class="section-label reveal">003 / Ventures</div>
   <div class="section-title reveal">Where I <em>build</em></div>
   <div class="ventures-grid">
     <div class="venture-card reveal">
       <div class="v-icon">🏛️</div>
       <h3>Miami-Dade Innovation Authority</h3>
       <div class="v-role">Pilot Manager</div>
-      <p>Managing technology demonstration pilots with startups leveraging county data. Overseeing Project Development Agreements across departments — from predictive maintenance to IoT-enabled municipal water infrastructure.</p>
+      <p>Running technology demonstration pilots that pair startups with county data across transportation, solid waste, and water and sewer infrastructure &mdash; the civic plumbing that shapes daily life for millions.</p>
     </div>
     <div class="venture-card reveal">
       <div class="v-icon">💊</div>
       <h3>ELMC Rx Solutions</h3>
       <div class="v-role">Chief Technology Officer</div>
-      <p>Leading development of pharmacy benefit analytics tools including Rx Contract IQ — a PBM RFP analysis platform designed for benefits brokers, featuring financial modeling and multi-step intake workflows.</p>
+      <p>Continuing to lead technology at the healthcare company that acquired Tesser Health, building tools for pharmacy benefit analytics and cost reduction for self-insured employers.</p>
     </div>
     <div class="venture-card reveal">
       <div class="v-icon">🏥</div>
-      <h3>Baptist Knight Fellowship</h3>
-      <div class="v-role">Healthcare Innovation Fellow</div>
-      <p>Working on post-discharge care solutions addressing vulnerable patient populations and hospital readmission challenges at one of South Florida's leading health systems.</p>
+      <h3>Baptist Health</h3>
+      <div class="v-role">Knight Innovation Fellow</div>
+      <p>Working at the seam of health, technology, and community at one of South Florida's leading health systems.</p>
     </div>
     <div class="venture-card reveal">
       <div class="v-icon">🔧</div>
-      <h3>Seecharan Group LLC</h3>
+      <h3>Seecharan Group</h3>
       <div class="v-role">Founder</div>
-      <p>Holding entity for independent consulting, technology advisory, and real estate operations. Bridging healthcare technology expertise with civic innovation opportunities.</p>
+      <p>Advisory and venture practice bridging healthcare technology expertise with civic innovation opportunities.</p>
     </div>
   </div>
 </section>
 
 <!-- Community -->
 <section id="community">
-  <div class="section-label reveal" style="color: var(--gold);">003 / Community</div>
+  <div class="section-label reveal" style="color: var(--gold);">004 / Community</div>
   <div class="section-title reveal">Giving <em>back</em></div>
   <div class="community-items">
     <div class="community-item reveal">
       <h4>AIRIE</h4>
-      <div class="ci-role">Board Leadership</div>
-      <p>Supporting Artists in Residence in Everglades — connecting creative practice with environmental stewardship in one of America's most vital ecosystems.</p>
+      <div class="ci-role">President &amp; Chair</div>
+      <p>Led Artists in Residence in Everglades &mdash; fostering environmental awareness through artistic expression, partnering with institutions like the Smithsonian and Venice Biennale.</p>
+    </div>
+    <div class="community-item reveal">
+      <h4>Genius Factory</h4>
+      <div class="ci-role">Founder</div>
+      <p>Founded to bring STEM education and leadership programming to underserved youth, empowering the next generation of builders and thinkers.</p>
+    </div>
+    <div class="community-item reveal">
+      <h4>Venture Caf&eacute; Miami</h4>
+      <div class="ci-role">Board Member</div>
+      <p>Provided strategic guidance to promote innovation and entrepreneurship in the local Miami community.</p>
     </div>
     <div class="community-item reveal">
       <h4>PS 305</h4>
-      <div class="ci-role">Board Leadership</div>
-      <p>Advancing education initiatives in Miami-Dade County, bridging technology and community to strengthen public schools and student outcomes.</p>
+      <div class="ci-role">Strategic Advisor</div>
+      <p>Supported education initiatives to enhance learning opportunities for underserved communities in Miami-Dade County.</p>
     </div>
-    <div class="community-item reveal">
-      <h4>NASA Consulting</h4>
-      <div class="ci-role">Past Engagement</div>
-      <p>Applied healthcare technology and data systems expertise in collaboration with one of the world's foremost research and innovation agencies.</p>
-    </div>
+  </div>
+
+  <div class="speaking-list reveal">
+    <div class="speaking-tag">SIAA Charlotte</div>
+    <div class="speaking-tag">CoMotion Miami</div>
+    <div class="speaking-tag">Health 2.0</div>
+    <div class="speaking-tag">AARP Innovation 50</div>
+    <div class="speaking-tag">Global Wellness Institute</div>
+    <div class="speaking-tag">Ignite Miami</div>
   </div>
 </section>
 
@@ -713,7 +842,6 @@
 </footer>
 
 <script>
-  // Scroll-based reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
