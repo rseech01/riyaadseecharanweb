@@ -139,6 +139,78 @@ The contact CTA's email never appears as a contiguous string in the page source.
 
 ---
 
+## Site content reference (source of truth)
+
+Every dated/factual claim on the site, in one place. When facts change, update both the HTML AND the matching field listed here in the JSON-LD blocks.
+
+### Identity
+
+| Field | Value |
+|---|---|
+| Full name | Riyaad Seecharan |
+| Domain | https://riyaad.seecharan.com |
+| Email (obfuscated) | `riyaad` `@` `seecharan` `.com` — assembled at runtime |
+| LinkedIn | https://www.linkedin.com/in/riyaadseecharan/ |
+| Location | Miami, Florida (Caribbean / Trinidad & Tobago family ties) |
+| Logo | `RS.` (deep navy + coral period) |
+
+### Timeline (Arc section)
+
+| Years | Era | Key facts |
+|---|---|---|
+| 1996 – 2000 | NASA Kennedy Space Center | Center for Innovation and Knowledge Management; SAGE; Expert Seeker; ISS intranet prototypes |
+| 2000 – 2006 | EisenWorld → Microsoft | Director of Product Development; PC migration tool; shipped inside Windows 7; company acquired by Microsoft |
+| 2007 – 2013 | Between Acts | South Florida startup work; **Not Going to Lie** (founded 2011, social media app); **PxSource** (founded + sold 2013 to Revolution EHR) |
+| 2014 – Present | Healthcare Technology | **Tesser Health** (founded 2014, acquired by ELMC Rx); **EyeCheq** (CPO, ~$8M Series A, $40M valuation); **ClinicCover, GetPlano, EHR** (all acquired by Barti Software) |
+| Now | Civic Innovation | MDIA pilot program — startups + county data (transit, water, waste); 2.7M Miami-Dade residents |
+
+### Current ventures (Ventures section)
+
+| Org | Role | Dates / detail |
+|---|---|---|
+| Miami-Dade Innovation Authority (MDIA) | Pilot Manager | Cohort process: vetted startups → transit, water, waste pilots; RFP through deployment |
+| ELMC Rx Solutions | Chief Technology Officer | Pharmacy benefit analytics + cost reduction for self-insured employers; acquired Tesser Health |
+| Baptist Health | Knight Innovation Fellow | **2025–2026 cohort**; focus: 30-day post-discharge readmission insights |
+| Seecharan Group | Founder | Advisory + board for early-stage founders, plus product / strategy sprints; healthcare and civic-tech crossover |
+
+### Community involvements (Community section)
+
+| Org | Role | Dates | Status | Notable |
+|---|---|---|---|---|
+| AIRIE (Artists in Residence in Everglades) | Board Member · Past Chair | **2021 – present** (chair **2023 – 2024**) | Current | Helped bring residency to Venice Biennale (2023) and Cooper Hewitt (2024) |
+| Genius Factory | Founder | **2014 – 2020** (programming) | Inactive | STEM + leadership programming for middle-school kids in Overtown's Williams Park |
+| Venture Café Miami | Board Member | **2017 – 2018** | Past | Strategic guidance + taught classes within programming |
+| PS 305 | Strategic Advisor | **2021 – 2022** | Past | Strategy, operations, communications, action planning |
+
+### Stat blocks (About section) — *unverified, carried forward as-is*
+
+| Stat | Value |
+|---|---|
+| Venture Value Created | $81M+ |
+| Capital Raised | $8M |
+| Companies Founded | 5+ |
+| Successful Exits | 5 |
+
+### Speaking appearances (tags in Community section) — *no event-page links yet*
+
+SIAA Charlotte · CoMotion Miami · Health 2.0 · AARP Innovation 50 · Global Wellness Institute · Ignite Miami
+
+### Where each fact lives in the HTML (sync points)
+
+When a fact changes, update **every** location listed:
+
+| Fact | Locations to update |
+|---|---|
+| Current job titles | (1) `.roles-strip` chips, (2) `.venture-card`s, (3) JSON-LD `Person.jobTitle`, (4) JSON-LD `Person.worksFor`, (5) `<title>` and `<meta description>`, (6) Open Graph + Twitter description, (7) FAQPage "Who is Riyaad Seecharan?" answer |
+| Companies founded | (1) Timeline narrative, (2) JSON-LD `Person.founder`, (3) FAQPage "What companies has Riyaad Seecharan founded or led?" answer |
+| Companies worked at (alumni) | (1) Timeline narrative, (2) JSON-LD `Person.alumniOf` |
+| Email | (1) `.contact-email` `data-u` / `data-d` / `data-t` attributes only (never plain text) |
+| LinkedIn URL | (1) `.contact-btn.secondary` `href`, (2) JSON-LD `Person.sameAs` |
+| Bio (~50w canonical) | (1) FAQPage "Who is Riyaad Seecharan?" answer, (2) `Person.description`, (3) `<meta description>`, (4) Open Graph description |
+| Domain change | (1) `CNAME`, (2) `<link rel="canonical">`, (3) all `og:url` / `og:image` URLs, (4) `Person.url` and `WebSite.url`, (5) `sitemap.xml` `<loc>`, (6) `robots.txt` Sitemap directive |
+
+---
+
 ## Changelog — May 2026 audit + redesign pass
 
 Comprehensive review across SEO, accessibility, narrative, content, brand, frontend, and AI-citation visibility, followed by a 10-task fix pass.
