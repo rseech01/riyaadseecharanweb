@@ -68,7 +68,9 @@
     {"@type": "Organization", "name": "PxSource"},
     {"@type": "Organization", "name": "Not Going to Lie"},
     {"@type": "Organization", "name": "Seecharan Group"},
-    {"@type": "Organization", "name": "Genius Factory"}
+    {"@type": "Organization", "name": "Genius Factory"},
+    {"@type": "Organization", "name": "ClinicCover"},
+    {"@type": "Organization", "name": "GetPlano"}
   ],
   "alumniOf": [
     {"@type": "Organization", "name": "NASA Kennedy Space Center"},
@@ -238,6 +240,7 @@
     font-size: 1.3rem;
     letter-spacing: -0.02em;
     color: var(--deep);
+    text-decoration: none;
   }
 
   nav .logo span { color: var(--coral); }
@@ -970,7 +973,7 @@
 
 <!-- Navigation -->
 <nav aria-label="Primary">
-  <div class="logo" aria-hidden="true">RS<span>.</span></div>
+  <a href="https://riyaad.seecharan.com/" class="logo" aria-label="Home">RS<span>.</span></a>
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#arc">Arc</a></li>
@@ -1025,8 +1028,8 @@
       <div class="section-label">001 / Background</div>
       <h2 id="about-title" class="section-title">The connector's <em>instinct</em></h2>
       <div class="about-text">
-        <p>At the Miami-Dade Innovation Authority, I serve as Pilot Manager &mdash; connecting vetted startups with the county departments and data sets that run transportation, solid waste, and water and sewer infrastructure for 2.7 million Miami-Dade residents.</p>
-        <p>As a Baptist Health Knight Innovation Fellow, I develop connections between care delivery, technology, and the communities those systems serve. I remain CTO of ELMC Rx Solutions &mdash; the healthcare company that acquired my prior venture, Tesser Health &mdash; and run the Seecharan Group as my advisory and venture practice.</p>
+        <p>I'm a founder, fellow, and civic technologist building at the intersection of public innovation and healthcare technology. At the Miami-Dade Innovation Authority, I serve as Pilot Manager — connecting vetted startups with the county departments and data sets that run transportation, solid waste, and water and sewer infrastructure for 2.7 million Miami-Dade residents.</p>
+        <p>As part of the 2025–2026 Baptist Health Knight Innovation Fellowship cohort, I'm working on insights into 30-day post-discharge readmissions — a critical hospital quality and cost metric. I remain CTO of ELMC Rx Solutions — the healthcare company that acquired my prior venture, Tesser Health — and run the Seecharan Group as my advisory and venture practice.</p>
         <p>Rooted in the Caribbean with family ties to Trinidad and Tobago, I live and build in Miami.</p>
       </div>
     </div>
@@ -1074,7 +1077,7 @@
     <div class="timeline-item reveal">
       <div class="t-years">2014 &ndash; Present &middot; Healthcare Technology</div>
       <h3>Building, Scaling &amp; Exiting</h3>
-      <p>Healthcare became the focus in 2014 when he founded Tesser Health to cut pharmacy and medical spend for self-insured employers through behavioral science and software; the company was later acquired by ELMC Rx. He served as Chief Product Officer at EyeCheq, helping raise roughly $8M in Series A and reach a $40M valuation. Along the way he built and sold three more ventures &mdash; ClinicCover, GetPlano, and EHR &mdash; all acquired by Barti Software. The work spanned HIPAA-compliant platforms, SaaS architecture, patient engagement, and product strategy.</p>
+      <p>Healthcare became the focus in 2014 when he founded Tesser Health to cut pharmacy and medical spend for self-insured employers through behavioral science and software; the company was later acquired by ELMC Rx. He served as Chief Product Officer at EyeCheq, helping raise roughly $8M in Series A and reach a $40M valuation. Along the way he built and sold two more ventures &mdash; ClinicCover and GetPlano (an electronic health records platform) &mdash; both acquired by Barti Software. The work spanned HIPAA-compliant platforms, SaaS architecture, patient engagement, and product strategy.</p>
     </div>
     <div class="timeline-item reveal">
       <div class="t-years">Now &middot; Civic Innovation</div>
@@ -1211,6 +1214,23 @@
   }, { threshold: 0.15 });
 
   reveals.forEach(el => observer.observe(el));
+
+  // Logo: when the link target is the page we're already on, smooth-scroll
+  // to the top instead of doing a full page reload. Right-click "open in new
+  // tab", cmd-click, and crawlers still see a real link to the home URL.
+  document.querySelectorAll('a.logo').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const target = new URL(link.href);
+      if (target.origin === location.origin && target.pathname === location.pathname) {
+        e.preventDefault();
+        const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+        if (location.hash) {
+          history.replaceState(null, '', location.pathname);
+        }
+      }
+    });
+  });
 
   // Email obfuscation: assemble at runtime so the address never appears as a
   // contiguous string in the page source. Bots that don't execute JS get the
