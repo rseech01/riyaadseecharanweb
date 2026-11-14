@@ -573,13 +573,13 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, var(--teal), var(--coral), var(--gold), var(--deep));
+    background: linear-gradient(to bottom, var(--deep), var(--gold), var(--coral), var(--teal));
   }
 
   .timeline-item {
     position: relative;
     padding-left: 3rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
 
   .timeline-item:last-child { padding-bottom: 0; }
@@ -620,7 +620,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     font-weight: 700;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.4rem;
   }
 
   .timeline-item p {
@@ -630,6 +630,41 @@
     font-weight: 300;
     max-width: 620px;
   }
+
+  .timeline-item .t-summary { line-height: 1.65; margin-bottom: 0.1rem; }
+  .t-more > p { margin-top: 0.25rem; }
+
+  .t-more summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 32px;
+    cursor: pointer;
+    list-style: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--teal);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .t-more summary::-webkit-details-marker { display: none; }
+  .t-more summary::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 0.2s;
+  }
+  .t-more[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+  .t-more .t-close,
+  .t-more[open] .t-open { display: none; }
+  .t-more[open] .t-close { display: inline; }
+  .t-more[open] summary { margin-bottom: 0.25rem; }
+  .t-more summary:hover { color: var(--deep); }
+  @media (pointer: coarse) { .t-more summary { min-height: 44px; } }
+  .t-more summary:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 3px; }
 
   .ventures-grid {
     display: grid;
@@ -1220,29 +1255,49 @@
   <h2 id="arc-title" class="section-title reveal">From NASA to <em>civic tech</em></h2>
   <div class="timeline">
     <div class="timeline-item reveal">
-      <div class="t-years">1996 &ndash; 2000 &middot; NASA Kennedy Space Center</div>
-      <h3>Knowledge Management &amp; Innovation</h3>
-      <p>Inside the Center for Innovation and Knowledge Management, Riyaad contributed to early work on capturing and connecting institutional knowledge across large organizations. He worked on systems including SAGE and Expert Seeker &mdash; both built to help people locate subject-matter experts across distributed networks &mdash; as well as intranet prototypes for the International Space Station program. The throughline of that work &mdash; using software to connect people to information they couldn't otherwise reach &mdash; has quietly run through everything he's built since.</p>
-    </div>
-    <div class="timeline-item reveal">
-      <div class="t-years">2000 &ndash; 2006 &middot; EisenWorld &rarr; Microsoft</div>
-      <h3>Commercial Software &amp; Acquisition</h3>
-      <p>As Director of Product Development at EisenWorld, Riyaad led the team behind the PC migration tool that eventually shipped inside Windows 7 &mdash; work that culminated in the company's acquisition by Microsoft.</p>
-    </div>
-    <div class="timeline-item reveal">
-      <div class="t-years">2007 &ndash; 2013 &middot; Between Acts</div>
-      <h3>Startup Years &amp; First Healthcare Exit</h3>
-      <p>Between Microsoft and Tesser Health, Riyaad worked across a string of early-stage teams in the South Florida startup scene &mdash; building, shipping, and finding his footing as an operator. In 2011 he founded Not Going to Lie, a social media application built around honest, in-the-moment posting. In 2013 he founded PxSource and sold it the same year to Revolution EHR &mdash; a healthcare workflow exit that pointed clearly toward where the next decade of work would live.</p>
+      <div class="t-years">Now &middot; Civic Innovation</div>
+      <h3>Miami-Dade Innovation Authority</h3>
+      <p class="t-summary">Pilot Director at the Miami-Dade Innovation Authority, running the pilots for its Public Innovation Challenges with county departments.</p>
+      <details class="t-more">
+        <summary><span class="t-open">Read more</span><span class="t-close">Show less</span></summary>
+        <p>Today Riyaad is Pilot Director at the Miami-Dade Innovation Authority, running the pilots for MDIA's Public Innovation Challenges &mdash; most recently with the county's water and sewer, emergency management, housing, and solid waste departments, whose systems serve 2.7 million Miami-Dade residents. The same connector instinct that started at NASA, applied to municipal infrastructure.</p>
+      </details>
     </div>
     <div class="timeline-item reveal">
       <div class="t-years">2014 &ndash; Present &middot; Healthcare Technology</div>
       <h3>Building, Scaling &amp; Exiting</h3>
-      <p>Healthcare became the focus in 2014 when he founded Tesser Health to cut pharmacy and medical spend for self-insured employers through behavioral science and software; the company was later acquired by ELMC Rx. He co-founded EyeCheq and served as its Chief Product Officer, helping raise roughly $8M in Series A and reach a $40M valuation. Along the way he co-founded and sold two more ventures &mdash; ClinicCover (an on-demand optometric doctor platform for practices) and GetPlano (an EHR for retail optometric practices) &mdash; both acquired by Barti Software. The work spanned HIPAA-compliant platforms, SaaS architecture, patient engagement, and product strategy.</p>
+      <p class="t-summary">Founded Tesser Health (acquired by ELMC Rx), co-founded EyeCheq, and co-founded GetPlano and ClinicCover, both sold to Barti Software.</p>
+      <details class="t-more">
+        <summary><span class="t-open">Read more</span><span class="t-close">Show less</span></summary>
+        <p>Healthcare became the focus in 2014 when he founded Tesser Health to cut pharmacy and medical spend for self-insured employers through behavioral science and software; the company was later acquired by ELMC Rx. He co-founded EyeCheq and served as its Chief Product Officer, helping raise roughly $8M in Series A and reach a $40M valuation. Along the way he co-founded and sold two more ventures &mdash; ClinicCover (an on-demand optometric doctor platform for practices) and GetPlano (an EHR for retail optometric practices) &mdash; both acquired by Barti Software. The work spanned HIPAA-compliant platforms, SaaS architecture, patient engagement, and product strategy.</p>
+      </details>
     </div>
     <div class="timeline-item reveal">
-      <div class="t-years">Now &middot; Civic Innovation</div>
-      <h3>Miami-Dade Innovation Authority</h3>
-      <p>Today Riyaad is Pilot Director at the Miami-Dade Innovation Authority, running the pilots for MDIA's Public Innovation Challenges &mdash; most recently with the county's water and sewer, emergency management, housing, and solid waste departments, whose systems serve 2.7 million Miami-Dade residents. The same connector instinct that started at NASA, applied to municipal infrastructure.</p>
+      <div class="t-years">2007 &ndash; 2013 &middot; Between Acts</div>
+      <h3>Startup Years &amp; First Healthcare Exit</h3>
+      <p class="t-summary">Built and shipped with South Florida startups, founded Not Going to Lie, and founded and sold PxSource to Revolution EHR.</p>
+      <details class="t-more">
+        <summary><span class="t-open">Read more</span><span class="t-close">Show less</span></summary>
+        <p>Between Microsoft and Tesser Health, Riyaad worked across a string of early-stage teams in the South Florida startup scene &mdash; building, shipping, and finding his footing as an operator. In 2011 he founded Not Going to Lie, a social media application built around honest, in-the-moment posting. In 2013 he founded PxSource and sold it the same year to Revolution EHR &mdash; a healthcare workflow exit that pointed clearly toward where the next decade of work would live.</p>
+      </details>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="t-years">2000 &ndash; 2006 &middot; EisenWorld &rarr; Microsoft</div>
+      <h3>Commercial Software &amp; Acquisition</h3>
+      <p class="t-summary">Led product development on the PC migration software that Microsoft acquired and shipped inside Windows.</p>
+      <details class="t-more">
+        <summary><span class="t-open">Read more</span><span class="t-close">Show less</span></summary>
+        <p>As Director of Product Development at EisenWorld, Riyaad led the team behind the PC migration tool that eventually shipped inside Windows 7 &mdash; work that culminated in the company's acquisition by Microsoft.</p>
+      </details>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="t-years">1996 &ndash; 2000 &middot; NASA Kennedy Space Center</div>
+      <h3>Knowledge Management &amp; Innovation</h3>
+      <p class="t-summary">Worked on NASA knowledge-management tools, including SAGE and Expert Seeker, and intranet prototypes for the International Space Station.</p>
+      <details class="t-more">
+        <summary><span class="t-open">Read more</span><span class="t-close">Show less</span></summary>
+        <p>Inside the Center for Innovation and Knowledge Management, Riyaad contributed to early work on capturing and connecting institutional knowledge across large organizations. He worked on systems including SAGE and Expert Seeker &mdash; both built to help people locate subject-matter experts across distributed networks &mdash; as well as intranet prototypes for the International Space Station program. The throughline of that work &mdash; using software to connect people to information they couldn't otherwise reach &mdash; has quietly run through everything he's built since.</p>
+      </details>
     </div>
   </div>
 </section>
