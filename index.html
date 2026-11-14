@@ -772,7 +772,7 @@
 
   .community-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 2rem;
     position: relative;
     z-index: 2;
@@ -788,6 +788,12 @@
   .community-item:hover {
     border-color: rgba(233,196,106,0.3);
     background: rgba(255,255,255,0.03);
+  }
+
+  .community-item p a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   .community-item .ci-logo {
@@ -1260,6 +1266,12 @@
   <div class="section-label reveal" style="color: var(--gold);">006 / Community</div>
   <h2 id="community-title" class="section-title reveal">Where the work goes <em>beyond the work</em></h2>
   <div class="community-items">
+    <div class="community-item reveal">
+      <div class="ci-logo"><img src="/assets/logos/alzdose-logo.png" alt="AlzDose medication dispenser prototype" width="720" height="240" loading="lazy"></div>
+      <h3>AlzDose</h3>
+      <div class="ci-role">Founder &middot; Not-for-profit project</div>
+      <p>An open-source medication dispenser for families caring for someone with memory loss or dementia. A large screen shows the day, time and next dose, and caregivers can check status remotely. Currently a working prototype, with designs to be published openly. <a href="https://alzdose.com/" target="_blank" rel="noopener">alzdose.com</a></p>
+    </div>
     <div class="community-item reveal">
       <div class="ci-logo"><img src="/assets/logos/airie-logo.png" alt="Artists in Residence in Everglades logo" width="720" height="240" loading="lazy"></div>
       <h3>AIRIE</h3>
