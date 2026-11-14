@@ -683,6 +683,21 @@
   .venture-card:nth-child(3) .v-icon { background: rgba(233,196,106,0.18); color: #8B6914; }
   .venture-card:nth-child(4) .v-icon { background: rgba(26,26,46,0.08); color: var(--deep); }
 
+  .venture-card .app-logo {
+    height: 64px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .venture-card .app-logo img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+
   .venture-card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
@@ -1135,25 +1150,19 @@
   <h2 id="applications-title" class="section-title reveal">Applications built <em>and sold</em></h2>
   <div class="ventures-grid">
     <div class="venture-card reveal">
-      <div class="v-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      </div>
+      <div class="app-logo"><img src="/assets/logos/pxsource-logo.png" alt="PxSource logo" width="748" height="800" loading="lazy"></div>
       <h3>PxSource</h3>
       <div class="v-role">President &middot; Acquired by RevolutionEHR</div>
       <p>Patient engagement and communication software for eye care practices, including the Health Lyriqs and Smart Triage products. RevolutionEHR acquired the company to bring those services into its EHR platform.</p>
     </div>
     <div class="venture-card reveal">
-      <div class="v-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
-      </div>
+      <div class="app-logo"><img src="/assets/logos/getplano-logo.png" alt="GetPlano logo" width="800" height="355" loading="lazy"></div>
       <h3>GetPlano</h3>
       <div class="v-role">Co-Founder &amp; CTO, 2018&ndash;2023 &middot; Acquired by Barti Software</div>
       <p>An electronic health records system for retail optometric practices, built on HIPAA-compliant infrastructure. Acquired by Barti Software, the EHR and practice management company for eye care.</p>
     </div>
     <div class="venture-card reveal">
-      <div class="v-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v6"/><path d="M9 11h6"/></svg>
-      </div>
+      <div class="app-logo"><img src="/assets/logos/cliniccover-logo.png" alt="ClinicCover logo" width="800" height="143" loading="lazy"></div>
       <h3>ClinicCover</h3>
       <div class="v-role">Co-Founder &amp; CTO, 2018&ndash;2023 &middot; Acquired by Barti Software</div>
       <p>An on-demand optometric doctor platform for optometry practices, built alongside GetPlano on the same HIPAA-compliant foundation. Also acquired by Barti Software.</p>

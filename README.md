@@ -181,6 +181,8 @@ Every dated/factual claim on the site, in one place. When facts change, update b
 | GetPlano | Co-Founder & CTO, 2018–2023 | EHR for retail optometric practices; acquired by Barti Software |
 | ClinicCover | Co-Founder & CTO, 2018–2023 | On-demand optometric doctor platform for optometry practices; acquired by Barti Software |
 
+Logos for the three application cards live in `assets/logos/` (upscaled from low-resolution originals).
+
 ### Community involvements (Community section)
 
 | Org | Role | Dates | Status | Notable |
