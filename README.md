@@ -26,7 +26,7 @@ To preview locally, just open `index.html` in a browser. No server required.
 ├── index.html          # Entire site (HTML + CSS + JS)
 ├── README.md           # This file
 ├── CNAME               # GitHub Pages custom domain pointer
-├── favicon.svg         # Browser tab icon (RS. monogram, deep navy + coral)
+├── favicon.svg         # Browser tab icon (RS. monogram, warm charcoal + coral)
 ├── og-image.svg        # Source for social preview (design-of-record)
 ├── og-image.png        # 1200×630 PNG used by og:image (LinkedIn, X, iMessage)
 ├── robots.txt          # Allow all + sitemap pointer
@@ -52,7 +52,7 @@ npx --yes svgexport og-image.svg og-image.png 1200:630
 | `--teal` | `#1F7268` | Secondary accent + small text (passes AA on cream) |
 | `--gold` | `#E9C46A` | Decorative only on light bgs; text only on `--deep` |
 | `--blush` | `#F4A89A` | Tertiary decoration |
-| `--deep` | `#1A1A2E` | Headlines, dark sections |
+| `--deep` | `#23201D` | Headlines, dark sections |
 | `--cream` | `#FDF8F2` | Default page background |
 | `--sand` | `#F5EDE3` | Alternate section background |
 | `--slate` | `#4A4A5A` | Body text |
@@ -152,7 +152,7 @@ Every dated/factual claim on the site, in one place. When facts change, update b
 | Email (obfuscated) | `riyaad` `@` `seecharan` `.com` — assembled at runtime |
 | LinkedIn | https://www.linkedin.com/in/riyaadseecharan/ |
 | Location | Miami, Florida (Caribbean / Trinidad & Tobago family ties) |
-| Logo | `RS.` (deep navy + coral period) |
+| Logo | `RS.` (warm charcoal + coral period) |
 
 ### Timeline (Arc section)
 
@@ -241,7 +241,7 @@ Comprehensive review across SEO, accessibility, narrative, content, brand, front
 
 ### Files added
 
-- `favicon.svg` — RS. monogram (deep navy + coral period)
+- `favicon.svg` — RS. monogram (warm charcoal + coral period)
 - `og-image.svg` — Design source for the social preview
 - `og-image.png` — 1200×630 PNG referenced by `og:image` (rendered via `npx svgexport`)
 - `robots.txt` — Allow all + sitemap pointer
