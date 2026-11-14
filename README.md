@@ -1,6 +1,6 @@
 # riyaadseecharan.com
 
-Personal site for Riyaad Seecharan — Miami-based healthcare technology entrepreneur and civic technologist (Pilot Manager at the Miami-Dade Innovation Authority, CTO of ELMC Rx Solutions, Baptist Health Knight Innovation Fellow).
+Personal site for Riyaad Seecharan — Miami-based healthcare technology entrepreneur and civic technologist (Pilot Director at the Miami-Dade Innovation Authority, Baptist Health Knight Innovation Fellow, former CTO of ELMC Rx Solutions).
 
 **Live:** https://riyaad.seecharan.com (GitHub Pages, custom domain via `CNAME`)
 
@@ -113,7 +113,7 @@ The site is built to be both crawlable by traditional search engines and quotabl
 **Three JSON-LD blocks:**
 1. **`Person`** — name, url, image, jobTitle (array), homeLocation, worksFor (4 orgs), founder (5 orgs), alumniOf (4 orgs incl. NASA + Microsoft), knowsAbout (9 topics), sameAs (LinkedIn)
 2. **`WebSite`** — name, url, author, language
-3. **`FAQPage`** — 4 high-likelihood AI prompts: "Who is Riyaad Seecharan?", "Who founded Tesser Health?", "What does the Pilot Manager at Miami-Dade Innovation Authority do?", "What companies has Riyaad Seecharan founded or led?"
+3. **`FAQPage`** — 4 high-likelihood AI prompts: "Who is Riyaad Seecharan?", "Who founded Tesser Health?", "What does the Pilot Director at Miami-Dade Innovation Authority do?", "What companies has Riyaad Seecharan founded or led?"
 
 When updating titles, roles, or company facts, update the corresponding fields in the JSON-LD blocks too — they're authoritative for AI-engine citations.
 
@@ -161,15 +161,15 @@ Every dated/factual claim on the site, in one place. When facts change, update b
 | 1996 – 2000 | NASA Kennedy Space Center | Center for Innovation and Knowledge Management; SAGE; Expert Seeker; ISS intranet prototypes |
 | 2000 – 2006 | EisenWorld → Microsoft | Director of Product Development; PC migration tool; shipped inside Windows 7; company acquired by Microsoft |
 | 2007 – 2013 | Between Acts | South Florida startup work; **Not Going to Lie** (founded 2011, social media app); **PxSource** (founded + sold 2013 to Revolution EHR) |
-| 2014 – Present | Healthcare Technology | **Tesser Health** (founded 2014, acquired by ELMC Rx); **EyeCheq** (CPO, ~$8M Series A, $40M valuation); **ClinicCover, GetPlano, EHR** (all acquired by Barti Software) |
-| Now | Civic Innovation | MDIA pilot program — startups + county data (transit, water, waste); 2.7M Miami-Dade residents |
+| 2014 – Present | Healthcare Technology | **Tesser Health** (founded 2014, acquired by ELMC Rx); **EyeCheq** (co-founder and CPO, ~$8M Series A, $40M valuation); **ClinicCover, GetPlano, EHR** (co-founded; all acquired by Barti Software) |
+| Now | Civic Innovation | MDIA Public Innovation Challenge pilots — water and sewer (No. 8), emergency management (No. 7), housing (No. 6), waste diversion (No. 5); 2.7M Miami-Dade residents |
 
 ### Current ventures (Ventures section)
 
 | Org | Role | Dates / detail |
 |---|---|---|
-| Miami-Dade Innovation Authority (MDIA) | Pilot Manager | Cohort process: vetted startups → transit, water, waste pilots; RFP through deployment |
-| ELMC Rx Solutions | Chief Technology Officer | Pharmacy benefit analytics + cost reduction for self-insured employers; acquired Tesser Health |
+| Miami-Dade Innovation Authority (MDIA) | Pilot Director (since Jan 2026) | Leads the pilots for the Public Innovation Challenges (Nos. 5–8); RFP through deployment |
+| ELMC Rx Solutions | Chief Technology Officer (2019–2025) | Pharmacy benefit analytics + cost reduction for self-insured employers; acquired Tesser Health |
 | Baptist Health | Knight Innovation Fellow | **2025–2026 cohort**; focus: 30-day post-discharge readmission insights |
 | Seecharan Group | Founder | Advisory + board for early-stage founders, plus product / strategy sprints; healthcare and civic-tech crossover |
 
@@ -224,7 +224,7 @@ Comprehensive review across SEO, accessibility, narrative, content, brand, front
 5. **Heading hierarchy fixed** — `.section-title` divs converted to proper `<h2>` (5 of them); community `<h4>` items promoted to `<h3>`. Outline now: 1 h1 → 5 h2 → 13 h3.
 6. **Narrative through-line committed** — "the connector" spine now appears in hero eyebrow, hero subtitle, About title, About paragraphs, Ventures title, and Community title. Previously the site stated three competing theses ("public purpose", "where I build", "giving back").
 7. **Editorial copy pass** — killed clichés ("civic plumbing", "at the seam", "bridging the gap", "serial healthcare technology entrepreneur turned public innovator", "next generation of builders and thinkers"). All 4 community cards and 2 weakest venture cards (Baptist Health, Seecharan Group) rewritten with real, specific facts (years, programs, focus areas).
-8. **Voice converted to first-person** — Hero subtitle, About paragraphs, and Contact lede now in first-person ("I serve as Pilot Manager…"). Timeline retained in third-person as historical record.
+8. **Voice converted to first-person** — Hero subtitle, About paragraphs, and Contact lede now in first-person ("I serve as Pilot Director…"). Timeline retained in third-person as historical record.
 9. **OS-rendered emojis replaced** with Lucide-style inline SVG icons (8 total: 3 orbit nodes, 4 venture v-icons, 1 footer pin). Brand now renders identically across Windows, macOS, iOS, Android.
 10. **Mobile hero fixed** — orbit graphic was previously `display: none` on `<768px`. Now scales to 60% via CSS transform and renders below the hero text.
 
