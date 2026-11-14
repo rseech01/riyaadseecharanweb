@@ -776,7 +776,7 @@
 
   .community-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
     gap: 2rem;
     position: relative;
     z-index: 2;
@@ -1093,6 +1093,19 @@
     .contact-btn { width: 100%; }
   }
 
+  /* Phones: no motion at all. Content is visible immediately and the
+     hero graphic is static. */
+  @media (max-width: 768px) {
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .venture-card:hover,
+    .stat-block:hover,
+    .community-item:hover { transform: none !important; box-shadow: none !important; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -1263,6 +1276,13 @@
       <div class="app-acquirer"><span>Website</span> <a href="https://www.rxcontractiq.com/" target="_blank" rel="noopener">rxcontractiq.com</a></div>
     </div>
     <div class="venture-card reveal">
+      <div class="app-logo"><img src="/assets/logos/alzdose-logo.png" alt="AlzDose medication dispenser prototype" width="720" height="240" loading="lazy"></div>
+      <h3>AlzDose</h3>
+      <div class="v-role">Founder &middot; Not-for-profit project</div>
+      <p>An open-source medication dispenser for families caring for someone with memory loss or dementia. A large screen shows the day, time and next dose, and caregivers can check status remotely. Now a working prototype, with designs to be published openly.</p>
+      <div class="app-acquirer"><span>Website</span> <a href="https://alzdose.com/" target="_blank" rel="noopener">alzdose.com</a></div>
+    </div>
+    <div class="venture-card reveal">
       <div class="app-logo"><img src="/assets/logos/eyecheq-logo.png" alt="EyeCheq logo" width="720" height="240" loading="lazy"></div>
       <h3>EyeCheq</h3>
       <div class="v-role">Co-Founder &amp; Chief Product Officer</div>
@@ -1335,12 +1355,6 @@
   <div class="section-label reveal" style="color: var(--gold);">006 / Community</div>
   <h2 id="community-title" class="section-title reveal">Where the work goes <em>beyond the work</em></h2>
   <div class="community-items">
-    <div class="community-item reveal">
-      <div class="ci-logo"><img src="/assets/logos/alzdose-logo.png" alt="AlzDose medication dispenser prototype" width="720" height="240" loading="lazy"></div>
-      <h3>AlzDose</h3>
-      <div class="ci-role">Founder &middot; Not-for-profit project</div>
-      <p>An open-source medication dispenser for families caring for someone with memory loss or dementia. A large screen shows the day, time and next dose, and caregivers can check status remotely. Currently a working prototype, with designs to be published openly. <a href="https://alzdose.com/" target="_blank" rel="noopener">alzdose.com</a></p>
-    </div>
     <div class="community-item reveal">
       <div class="ci-logo"><img src="/assets/logos/airie-logo.png" alt="Artists in Residence in Everglades logo" width="720" height="240" loading="lazy"></div>
       <h3>AIRIE</h3>
