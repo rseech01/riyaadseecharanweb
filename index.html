@@ -359,6 +359,7 @@
   .orbit-container {
     width: 380px;
     height: 380px;
+    flex-shrink: 0;
     position: relative;
   }
 
@@ -471,6 +472,7 @@
 
   section {
     padding: 6rem 5vw;
+    scroll-margin-top: 4.5rem;
   }
 
   .section-label {
@@ -631,7 +633,7 @@
 
   .ventures-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 2rem;
   }
 
@@ -744,6 +746,8 @@
   }
 
   .venture-card .app-acquirer a {
+    display: inline-block;
+    padding: 0.35rem 0;
     color: var(--deep);
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -1004,14 +1008,84 @@
     transform: translateY(0);
   }
 
-  @media (max-width: 768px) {
+  .nav-toggle { display: none; }
+
+  @media (max-width: 1024px) {
     nav { padding: 1rem 1.5rem; }
-    nav ul { gap: 0.5rem; }
-    nav ul a { font-size: 0.72rem; padding: 0.5rem 0.5rem; }
-    .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 1rem; }
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      min-height: 44px;
+      padding: 0 0.9rem;
+      background: transparent;
+      border: 1px solid rgba(35, 32, 29, 0.18);
+      border-radius: 999px;
+      color: var(--deep);
+      font: 500 0.78rem 'DM Sans', sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .nav-toggle-bars,
+    .nav-toggle-bars::before,
+    .nav-toggle-bars::after {
+      display: block;
+      width: 16px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 1px;
+      position: relative;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .nav-toggle-bars::before,
+    .nav-toggle-bars::after { content: ''; position: absolute; left: 0; }
+    .nav-toggle-bars::before { top: -5px; }
+    .nav-toggle-bars::after { top: 5px; }
+    nav.open .nav-toggle-bars { background: transparent; }
+    nav.open .nav-toggle-bars::before { transform: translateY(5px) rotate(45deg); }
+    nav.open .nav-toggle-bars::after { transform: translateY(-5px) rotate(-45deg); }
+    nav ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      padding: 0.5rem 1.5rem 1rem;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(35, 32, 29, 0.08);
+      box-shadow: 0 16px 30px rgba(35, 32, 29, 0.08);
+    }
+    nav.open ul { display: flex; }
+    nav ul li + li { border-top: 1px solid rgba(35, 32, 29, 0.06); }
+    nav ul a {
+      display: flex;
+      align-items: center;
+      min-height: 48px;
+      width: 100%;
+      font-size: 0.85rem;
+      padding: 0.25rem 0;
+      border-bottom: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: minmax(0, 1fr); padding: 7rem 1.5rem 3rem; gap: 1rem; }
+    .hero-text .eyebrow { letter-spacing: 0.12em; flex-wrap: wrap; }
     .hero-graphic { height: 260px; align-items: flex-start; }
     .orbit-container { transform: scale(0.6); transform-origin: top center; }
-    .about-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+    .stat-blocks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .stat-block { padding: 1.25rem; }
+    .section-title { margin-bottom: 2rem; }
+    .section-label,
+    .venture-card .v-role,
+    .community-item .ci-role,
+    .venture-card .app-acquirer span { font-size: 0.72rem; }
+    .venture-card { padding: 1.75rem; }
+    .community-item { padding: 1.5rem; }
     section { padding: 4rem 1.5rem; }
     .roles-strip { gap: 1rem; padding: 2rem 1.5rem; }
     .role-chip { padding: 0.7rem 1.2rem; font-size: 0.72rem; }
@@ -1042,7 +1116,11 @@
 <!-- Navigation -->
 <nav aria-label="Primary">
   <a href="https://riyaad.seecharan.com/" class="logo" aria-label="Home">RS<span>.</span></a>
-  <ul>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+    <span class="nav-toggle-bars" aria-hidden="true"></span>
+    <span class="nav-toggle-label">Menu</span>
+  </button>
+  <ul id="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#arc">Arc</a></li>
     <li><a href="#ventures">Ventures</a></li>
@@ -1169,14 +1247,6 @@
       <h3>Miami-Dade Innovation Authority</h3>
       <div class="v-role">Pilot Director</div>
       <p>Running the pilots for MDIA's Public Innovation Challenges &mdash; most recently water and sewer, emergency management, affordable housing, and waste diversion &mdash; from RFP through deployment with the county.</p>
-    </div>
-    <div class="venture-card reveal">
-      <div class="v-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
-      </div>
-      <h3>ELMC Rx Solutions</h3>
-      <div class="v-role">Chief Technology Officer, 2019&ndash;2025</div>
-      <p>Led technology at the healthcare company that acquired Tesser Health, building tools for pharmacy benefit analytics and cost reduction for self-insured employers.</p>
     </div>
     <div class="venture-card reveal">
       <div class="v-icon" aria-hidden="true">
@@ -1375,6 +1445,25 @@
       }
     });
   });
+
+  // Mobile menu: toggle the link list; close on link tap, Escape, or tap outside.
+  const nav = document.querySelector('nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  if (nav && navToggle) {
+    const setOpen = (open) => {
+      nav.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.querySelector('.nav-toggle-label').textContent = open ? 'Close' : 'Menu';
+    };
+    navToggle.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+    nav.querySelectorAll('ul a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) { setOpen(false); navToggle.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (nav.classList.contains('open') && !nav.contains(e.target)) setOpen(false);
+    });
+  }
 
   // Email obfuscation: assemble at runtime so the address never appears as a
   // contiguous string in the page source. Bots that don't execute JS get the
