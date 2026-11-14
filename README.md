@@ -200,7 +200,7 @@ Logos for the three application cards live in `assets/logos/` (upscaled from low
 | Venture Value Created | $81M+ |
 | Capital Raised | $8M |
 | Companies Founded | 5+ |
-| Successful Exits | 5 |
+| Successful Exits | 4 |
 
 ### Speaking appearances (tags in Community section) — *no event-page links yet*
 
@@ -249,7 +249,7 @@ Comprehensive review across SEO, accessibility, narrative, content, brand, front
 
 ### Known TODOs / unverified claims
 
-- Stat block numbers (`$81M+ Venture Value Created`, `5+ Companies Founded`, `5 Successful Exits`) were carried forward unchanged — not independently audited.
+- Stat block numbers (`$81M+ Venture Value Created`, `5+ Companies Founded`, `4 Successful Exits`) were carried forward unchanged — not independently audited.
 - EyeCheq financials (`$8M Series A`, `$40M valuation`) carried forward unchanged.
 - Speaking tags (SIAA Charlotte, CoMotion Miami, Health 2.0, AARP Innovation 50, Global Wellness Institute, Ignite Miami) are inert `<div>`s with no event-page links — converting to anchor links would help AI-citation.
 - Only LinkedIn is in the `sameAs` array. Adding Crunchbase, X, GitHub, MDIA team page, etc. is the highest-leverage AEO improvement available.
