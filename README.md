@@ -169,7 +169,6 @@ Every dated/factual claim on the site, in one place. When facts change, update b
 | Org | Role | Dates / detail |
 |---|---|---|
 | Miami-Dade Innovation Authority (MDIA) | Pilot Director (since Jan 2026) | Runs the pilots for the Public Innovation Challenges (Nos. 5–8); RFP through deployment |
-| ELMC Rx Solutions | Chief Technology Officer (2019–2025) | Pharmacy benefit analytics + cost reduction for self-insured employers; acquired Tesser Health |
 | Baptist Health | Knight Innovation Fellow | **2025–2026 cohort**; focus: 30-day post-discharge readmission insights |
 | Rx Contract IQ | Founder | Platform for benefits brokers that scores and compares PBM RFP responses, flags contract risk, and models savings |
 
