@@ -44,7 +44,7 @@
   "@type": "Person",
   "name": "Riyaad Seecharan",
   "url": "https://riyaad.seecharan.com/",
-  "image": "https://riyaad.seecharan.com/og-image.png",
+  "image": "https://riyaad.seecharan.com/assets/headshot.jpg",
   "description": "Pilot Director at the Miami-Dade Innovation Authority, Baptist Health Knight Innovation Fellow, founder of AlzDose and Rx Contract IQ, and healthcare technology founder with four exits.",
   "jobTitle": [
     "Pilot Director",
@@ -479,7 +479,8 @@
 
   .orbit-center {
     position: absolute;
-    inset: 120px;
+    inset: 110px;
+    overflow: hidden;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--coral), var(--blush));
     display: flex;
@@ -491,6 +492,8 @@
     font-weight: 900;
     box-shadow: 0 12px 40px rgba(232, 99, 74, 0.3);
   }
+
+  .orbit-center img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   .roles-strip {
     padding: 3rem 5vw;
@@ -746,6 +749,39 @@
   @media (pointer: coarse) { .t-more summary { min-height: 44px; } }
   .t-more summary:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 3px; }
 
+  .tl-compact {
+    list-style: none;
+    max-width: 1000px;
+    border-top: 1px solid rgba(35, 32, 29, 0.12);
+  }
+  .tl-compact li {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1.1fr) minmax(0, 1.6fr);
+    gap: 0.5rem 2rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid rgba(35, 32, 29, 0.12);
+    align-items: baseline;
+  }
+  .tl-years {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--teal);
+    font-variant-numeric: tabular-nums;
+  }
+  .tl-where strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--deep);
+  }
+  .tl-role { display: block; font-size: 0.85rem; color: var(--slate); margin-top: 0.15rem; }
+  .tl-result { font-size: 0.95rem; line-height: 1.6; color: var(--slate); }
+  @media (max-width: 768px) {
+    .tl-compact li { grid-template-columns: minmax(0, 1fr); gap: 0.35rem; }
+  }
+
   .ventures-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
@@ -781,6 +817,7 @@
   .venture-card:nth-child(3)::after { background: var(--gold); }
   .venture-card:nth-child(4)::after { background: var(--deep); }
   .venture-card:nth-child(5)::after { background: var(--coral); }
+  .venture-card:nth-child(6)::after { background: var(--teal); }
 
   .venture-card .v-icon {
     width: 48px;
@@ -1250,11 +1287,10 @@
   </button>
   <ul id="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#arc">Arc</a></li>
-    <li><a href="#ventures">Ventures</a></li>
-    <li><a href="#applications">Applications</a></li>
-    <li><a href="#cool-things">Cool Things</a></li>
-    <li><a href="#community">Community</a></li>
+    <li><a href="#ventures">Now</a></li>
+    <li><a href="#community">Public Service</a></li>
+    <li><a href="#applications">Track Record</a></li>
+    <li><a href="#arc">Timeline</a></li>
   </ul>
 </nav>
 
@@ -1265,7 +1301,7 @@
   <div class="hero-text">
     <div class="eyebrow">Miami &middot; Connecting Systems</div>
     <h1>Riyaad<br><em>Seecharan</em></h1>
-    <p class="subtitle">I've spent three decades building software that connects people to systems they can't reach alone &mdash; NASA knowledge networks, commercial software at Microsoft, a string of healthcare ventures, and now Miami's civic infrastructure.</p>
+    <p class="subtitle">I use technology to make public systems work better for the people who depend on them. Today that means running pilots for the Miami-Dade Innovation Authority, after three decades building software at NASA, in commercial software and across healthcare ventures.</p>
   </div>
   <div class="hero-graphic" aria-hidden="true">
     <div class="orbit-container">
@@ -1284,7 +1320,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
         </div>
       </div>
-      <div class="orbit-center">RS</div>
+      <div class="orbit-center"><img src="/assets/headshot.jpg" alt="Riyaad Seecharan" width="440" height="440"></div>
     </div>
   </div>
 </section>
@@ -1304,7 +1340,7 @@
       <h2 id="about-title" class="section-title">The connector's <em>instinct</em></h2>
       <div class="about-text">
         <p>I'm a founder, fellow, and civic technologist building at the intersection of public innovation and healthcare technology. At the Miami-Dade Innovation Authority, I serve as Pilot Director — connecting vetted startups with the county departments and data sets that run transportation, solid waste, and water and sewer infrastructure for 2.7 million Miami-Dade residents.</p>
-        <p>As part of the 2025–2026 Baptist Health Knight Innovation Fellowship cohort, I'm working on insights into 30-day post-discharge readmissions — a critical hospital quality and cost metric. From 2019 to 2025 I was CTO of ELMC Rx Solutions — the healthcare company that acquired my prior venture, Tesser Health — and I run the Seecharan Group as my advisory and venture practice.</p>
+        <p>As part of the 2025–2026 Baptist Health Knight Innovation Fellowship cohort, I'm working on insights into 30-day post-discharge readmissions — a critical hospital quality and cost metric. From 2019 to 2025 I was CTO of ELMC Rx Solutions — the healthcare company that acquired my prior venture, Tesser Health — and I founded Rx Contract IQ and the not-for-profit AlzDose.</p>
         <p>Rooted in the Caribbean with family ties to Trinidad and Tobago, I live and build in Miami.</p>
       </div>
     </div>
@@ -1329,70 +1365,17 @@
   </div>
 </section>
 
-<!-- Arc / Timeline -->
-<section id="arc" aria-labelledby="arc-title">
-  <div class="section-label reveal">002 / The Arc</div>
-  <h2 id="arc-title" class="section-title reveal">From NASA to <em>civic tech</em></h2>
-  <div class="timeline">
-    <div class="timeline-item reveal">
-      <div class="t-years">Now &middot; Civic Innovation</div>
-      <h3>Miami-Dade Innovation Authority</h3>
-      <p class="t-summary">Pilot Director at the Miami-Dade Innovation Authority, running the pilots for its Public Innovation Challenges with county departments.</p>
-      <details class="t-more">
-        <summary><span class="t-open">Read more</span><span class="t-close">Show less</span></summary>
-        <p>Today Riyaad is Pilot Director at the Miami-Dade Innovation Authority, running the pilots for MDIA's Public Innovation Challenges &mdash; most recently with the county's water and sewer, emergency management, housing, and solid waste departments, whose systems serve 2.7 million Miami-Dade residents. The same connector instinct that started at NASA, applied to municipal infrastructure.</p>
-      </details>
-    </div>
-    <div class="timeline-item reveal">
-      <div class="t-years">2014 &ndash; Present &middot; Healthcare Technology</div>
-      <h3>Building, Scaling &amp; Exiting</h3>
-      <p class="t-summary">Founded Tesser Health (acquired by ELMC Rx), co-founded EyeCheq, and co-founded GetPlano and ClinicCover, both sold to Barti Software.</p>
-      <details class="t-more">
-        <summary><span class="t-open">Read more</span><span class="t-close">Show less</span></summary>
-        <p>Healthcare became the focus in 2014 when he founded Tesser Health to cut pharmacy and medical spend for self-insured employers through behavioral science and software; the company was later acquired by ELMC Rx. He co-founded EyeCheq and served as its Chief Product Officer, helping raise roughly $8M in Series A and reach a $40M valuation. Along the way he co-founded and sold two more ventures &mdash; ClinicCover (an on-demand optometric doctor platform for practices) and GetPlano (an EHR for retail optometric practices) &mdash; both acquired by Barti Software. The work spanned HIPAA-compliant platforms, SaaS architecture, patient engagement, and product strategy.</p>
-      </details>
-    </div>
-    <div class="timeline-item reveal">
-      <div class="t-years">2007 &ndash; 2013 &middot; Between Acts</div>
-      <h3>Startup Years &amp; First Healthcare Exit</h3>
-      <p class="t-summary">Built and shipped with South Florida startups, founded Not Going to Lie, and founded PxSource, acquired by Revolution EHR in 2014.</p>
-      <details class="t-more">
-        <summary><span class="t-open">Read more</span><span class="t-close">Show less</span></summary>
-        <p>Between Microsoft and Tesser Health, Riyaad worked across a string of early-stage teams in the South Florida startup scene &mdash; building, shipping, and finding his footing as an operator. In 2011 he founded Not Going to Lie, a social media application built around honest, in-the-moment posting. In 2013 he founded PxSource, which Revolution EHR acquired in 2014 &mdash; a healthcare workflow exit that pointed clearly toward where the next decade of work would live.</p>
-      </details>
-    </div>
-    <div class="timeline-item reveal">
-      <div class="t-years">2000 &ndash; 2006 &middot; EisenWorld &rarr; Microsoft</div>
-      <h3>Commercial Software &amp; Acquisition</h3>
-      <p class="t-summary">Led product development on the PC migration software that Microsoft acquired and shipped inside Windows.</p>
-      <details class="t-more">
-        <summary><span class="t-open">Read more</span><span class="t-close">Show less</span></summary>
-        <p>As Director of Product Development at EisenWorld, Riyaad led the team behind the PC migration tool that eventually shipped inside Windows 7 &mdash; work that culminated in the company's acquisition by Microsoft.</p>
-      </details>
-    </div>
-    <div class="timeline-item reveal">
-      <div class="t-years">1996 &ndash; 2000 &middot; NASA Kennedy Space Center</div>
-      <h3>Knowledge Management &amp; Innovation</h3>
-      <p class="t-summary">Worked on NASA knowledge-management tools, including SAGE and Expert Seeker, and intranet prototypes for the International Space Station.</p>
-      <details class="t-more">
-        <summary><span class="t-open">Read more</span><span class="t-close">Show less</span></summary>
-        <p>Inside the Center for Innovation and Knowledge Management, Riyaad contributed to early work on capturing and connecting institutional knowledge across large organizations. He worked on systems including SAGE and Expert Seeker &mdash; both built to help people locate subject-matter experts across distributed networks &mdash; as well as intranet prototypes for the International Space Station program. The throughline of that work &mdash; using software to connect people to information they couldn't otherwise reach &mdash; has quietly run through everything he's built since.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
 <!-- Ventures -->
 <section id="ventures" aria-labelledby="ventures-title" style="background: var(--sand);">
-  <div class="section-label reveal">003 / Ventures</div>
-  <h2 id="ventures-title" class="section-title reveal">Where the connecting <em>happens now</em></h2>
+  <div class="section-label reveal">002 / Now</div>
+  <h2 id="ventures-title" class="section-title reveal">What I&rsquo;m working on <em>now</em></h2>
   <div class="ventures-grid">
     <div class="venture-card reveal">
       <div class="v-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
       </div>
       <h3>Miami-Dade Innovation Authority</h3>
-      <div class="v-role">Pilot Director</div>
+      <div class="v-role">Pilot Director &middot; 2026&ndash;present</div>
       <p>Running the pilots for MDIA's Public Innovation Challenges &mdash; most recently water and sewer, emergency management, affordable housing, and waste diversion &mdash; from RFP through deployment with the county.</p>
     </div>
     <div class="venture-card reveal">
@@ -1400,7 +1383,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>
       </div>
       <h3>Baptist Health</h3>
-      <div class="v-role">Knight Innovation Fellow</div>
+      <div class="v-role">Knight Innovation Fellow &middot; 2025&ndash;2026</div>
       <p>2025&ndash;2026 cohort. Working on insights into 30-day post-discharge readmissions &mdash; a critical hospital quality and cost metric.</p>
     </div>
     <div class="venture-card reveal">
@@ -1427,68 +1410,10 @@
   </div>
 </section>
 
-<!-- Applications -->
-<section id="applications" aria-labelledby="applications-title">
-  <div class="section-label reveal">004 / Applications</div>
-  <h2 id="applications-title" class="section-title reveal">Applications built <em>and sold</em></h2>
-  <div class="ventures-grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));">
-    <div class="venture-card reveal">
-      <div class="app-logo"><img src="/assets/logos/pxsource-logo.png" alt="PxSource logo" width="720" height="240" loading="lazy"></div>
-      <h3>PxSource</h3>
-      <div class="v-role">President</div>
-      <p>Patient engagement and communication software for eye care practices, including the Health Lyriqs and Smart Triage products. RevolutionEHR acquired the company to bring those services into its EHR platform.</p>
-      <div class="app-acquirer"><span>Acquired by</span> <a href="https://www.revolutionehr.com/" target="_blank" rel="noopener">RevolutionEHR</a></div>
-    </div>
-    <div class="venture-card reveal">
-      <div class="app-logo"><img src="/assets/logos/tesserhealth-logo.png" alt="Tesser Health logo" width="720" height="240" loading="lazy"></div>
-      <h3>Tesser Health</h3>
-      <div class="v-role">Founder &amp; CEO</div>
-      <p>Software that applied behavioral science to cut pharmacy and medical spend for self-insured employers. ELMC Rx acquired the company.</p>
-      <div class="app-acquirer"><span>Acquired by</span> ELMC Rx</div>
-    </div>
-    <div class="venture-card reveal">
-      <div class="app-logo"><img src="/assets/logos/getplano-logo.png" alt="GetPlano logo" width="720" height="240" loading="lazy"></div>
-      <h3>GetPlano</h3>
-      <div class="v-role">Co-Founder &amp; CTO, 2018&ndash;2023</div>
-      <p>An electronic health records system for retail optometric practices, built on HIPAA-compliant infrastructure. Barti Software, the EHR and practice management company for eye care, acquired it.</p>
-      <div class="app-acquirer"><span>Acquired by</span> <a href="https://www.barti.com/" target="_blank" rel="noopener">Barti Software</a></div>
-    </div>
-    <div class="venture-card reveal">
-      <div class="app-logo"><img src="/assets/logos/cliniccover-logo.png" alt="ClinicCover logo" width="720" height="240" loading="lazy"></div>
-      <h3>ClinicCover</h3>
-      <div class="v-role">Co-Founder &amp; CTO, 2018&ndash;2023</div>
-      <p>An on-demand optometric doctor platform for optometry practices, built alongside GetPlano on the same HIPAA-compliant foundation. Barti Software acquired it as well.</p>
-      <div class="app-acquirer"><span>Acquired by</span> <a href="https://www.barti.com/" target="_blank" rel="noopener">Barti Software</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- Cool Things -->
-<section id="cool-things" aria-labelledby="cool-things-title" style="background: var(--sand);">
-  <div class="section-label reveal">005 / Cool Things</div>
-  <h2 id="cool-things-title" class="section-title reveal">Cool things <em>along the way</em></h2>
-  <div class="ventures-grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));">
-    <div class="venture-card reveal">
-      <div class="app-logo"><img src="/assets/logos/nasa-logo.png" alt="NASA insignia" width="720" height="240" loading="lazy"></div>
-      <h3>NASA</h3>
-      <div class="v-role">Consultant, Kennedy Space Center &middot; 1996&ndash;2000</div>
-      <p>Project manager for SAGE, a tool for finding subject-matter experts that Kennedy Space Center adopted, and a precursor to NASA's knowledge management platform. Also worked on Expert Seeker, which NASA adopted, and designed intranet prototypes for the International Space Station.</p>
-      <div class="app-acquirer" style="line-height: 2;"><span>Read more</span> <a href="https://ntrs.nasa.gov/citations/20040008849" target="_blank" rel="noopener">Expert Seeker (NASA Technical Reports Server)</a><br><a href="https://cdn.aaai.org/FLAIRS/1999/FLAIRS99-040.pdf" target="_blank" rel="noopener">SAGE, original conference paper (PDF)</a></div>
-    </div>
-    <div class="venture-card reveal">
-      <div class="app-logo"><img src="/assets/logos/pcrelocator-logo.png" alt="Alohabob PC Relocator box" width="720" height="240" loading="lazy"></div>
-      <h3>PC Relocator</h3>
-      <div class="v-role">Director of Product Development, EisenWorld &middot; 2000&ndash;2006</div>
-      <p>Led the redesign of Alohabob PC Relocator, software that moves programs, files and settings from an old computer to a new one. In 2006 Microsoft acquired the company, renamed Apptimum, for $25 million, and the technology went into Windows 7, putting it on more than a billion computers.</p>
-      <div class="app-acquirer"><span>Acquired by</span> <a href="https://news.microsoft.com/source/2006/03/07/microsoft-acquires-apptimum-inc-a-leading-application-transfer-company/" target="_blank" rel="noopener">Microsoft (press release)</a></div>
-    </div>
-  </div>
-</section>
-
 <!-- Community -->
 <section id="community" aria-labelledby="community-title">
-  <div class="section-label reveal" style="color: var(--gold);">006 / Community</div>
-  <h2 id="community-title" class="section-title reveal">Where the work goes <em>beyond the work</em></h2>
+  <div class="section-label reveal" style="color: var(--gold);">003 / Public Service</div>
+  <h2 id="community-title" class="section-title reveal">Public service and <em>community</em></h2>
   <div class="community-items">
     <div class="community-item reveal">
       <div class="ci-logo"><img src="/assets/logos/airie-logo.png" alt="Artists in Residence in Everglades logo" width="720" height="240" loading="lazy"></div>
@@ -1526,10 +1451,93 @@
   </div>
 </section>
 
+<!-- Track Record -->
+<section id="applications" aria-labelledby="applications-title">
+  <div class="section-label reveal">004 / Track Record</div>
+  <h2 id="applications-title" class="section-title reveal">Track record: built, sold <em>and shipped</em></h2>
+  <div class="ventures-grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));">
+    <div class="venture-card reveal">
+      <div class="app-logo"><img src="/assets/logos/pxsource-logo.png" alt="PxSource logo" width="720" height="240" loading="lazy"></div>
+      <h3>PxSource</h3>
+      <div class="v-role">President &middot; 2013&ndash;2014</div>
+      <p>Patient engagement and communication software for eye care practices, including the Health Lyriqs and Smart Triage products. RevolutionEHR acquired the company to bring those services into its EHR platform.</p>
+      <div class="app-acquirer"><span>Acquired by</span> <a href="https://www.revolutionehr.com/" target="_blank" rel="noopener">RevolutionEHR</a></div>
+    </div>
+    <div class="venture-card reveal">
+      <div class="app-logo"><img src="/assets/logos/tesserhealth-logo.png" alt="Tesser Health logo" width="720" height="240" loading="lazy"></div>
+      <h3>Tesser Health</h3>
+      <div class="v-role">Founder &amp; CEO &middot; 2014&ndash;2019</div>
+      <p>Software that applied behavioral science to cut pharmacy and medical spend for self-insured employers. ELMC Rx acquired the company.</p>
+      <div class="app-acquirer"><span>Acquired by</span> ELMC Rx</div>
+    </div>
+    <div class="venture-card reveal">
+      <div class="app-logo"><img src="/assets/logos/getplano-logo.png" alt="GetPlano logo" width="720" height="240" loading="lazy"></div>
+      <h3>GetPlano</h3>
+      <div class="v-role">Co-Founder &amp; CTO, 2018&ndash;2023</div>
+      <p>An electronic health records system for retail optometric practices, built on HIPAA-compliant infrastructure. Barti Software, the EHR and practice management company for eye care, acquired it.</p>
+      <div class="app-acquirer"><span>Acquired by</span> <a href="https://www.barti.com/" target="_blank" rel="noopener">Barti Software</a></div>
+    </div>
+    <div class="venture-card reveal">
+      <div class="app-logo"><img src="/assets/logos/cliniccover-logo.png" alt="ClinicCover logo" width="720" height="240" loading="lazy"></div>
+      <h3>ClinicCover</h3>
+      <div class="v-role">Co-Founder &amp; CTO, 2018&ndash;2023</div>
+      <p>An on-demand optometric doctor platform for optometry practices, built alongside GetPlano on the same HIPAA-compliant foundation. Barti Software acquired it as well.</p>
+      <div class="app-acquirer"><span>Acquired by</span> <a href="https://www.barti.com/" target="_blank" rel="noopener">Barti Software</a></div>
+    </div>
+    <div class="venture-card reveal">
+      <div class="app-logo"><img src="/assets/logos/nasa-logo.png" alt="NASA insignia" width="720" height="240" loading="lazy"></div>
+      <h3>NASA</h3>
+      <div class="v-role">Consultant, Kennedy Space Center &middot; 1996&ndash;2000</div>
+      <p>Project manager for SAGE, a tool for finding subject-matter experts that Kennedy Space Center adopted, and a precursor to NASA's knowledge management platform. Also worked on Expert Seeker, which NASA adopted, and designed intranet prototypes for the International Space Station.</p>
+      <div class="app-acquirer" style="line-height: 2;"><span>Read more</span> <a href="https://ntrs.nasa.gov/citations/20040008849" target="_blank" rel="noopener">Expert Seeker (NASA Technical Reports Server)</a><br><a href="https://cdn.aaai.org/FLAIRS/1999/FLAIRS99-040.pdf" target="_blank" rel="noopener">SAGE, original conference paper (PDF)</a></div>
+    </div>
+    <div class="venture-card reveal">
+      <div class="app-logo"><img src="/assets/logos/pcrelocator-logo.png" alt="Alohabob PC Relocator box" width="720" height="240" loading="lazy"></div>
+      <h3>PC Relocator</h3>
+      <div class="v-role">Director of Product Development, EisenWorld &middot; 2000&ndash;2006</div>
+      <p>Led the redesign of Alohabob PC Relocator, software that moves programs, files and settings from an old computer to a new one. In 2006 Microsoft acquired the company, renamed Apptimum, for $25 million, and the technology went into Windows 7, putting it on more than a billion computers.</p>
+      <div class="app-acquirer"><span>Acquired by</span> <a href="https://news.microsoft.com/source/2006/03/07/microsoft-acquires-apptimum-inc-a-leading-application-transfer-company/" target="_blank" rel="noopener">Microsoft (press release)</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section id="arc" aria-labelledby="arc-title">
+  <div class="section-label reveal">005 / Timeline</div>
+  <h2 id="arc-title" class="section-title reveal">From NASA to <em>civic tech</em></h2>
+  <ol class="tl-compact">
+    <li class="reveal">
+      <span class="tl-years">2026&ndash;now</span>
+      <span class="tl-where"><strong>Miami-Dade Innovation Authority</strong><span class="tl-role">Pilot Director</span></span>
+      <span class="tl-result">Runs the pilots for Public Innovation Challenges 5&ndash;8 with county departments</span>
+    </li>
+    <li class="reveal">
+      <span class="tl-years">2014&ndash;2025</span>
+      <span class="tl-where"><strong>Healthcare technology</strong><span class="tl-role">Founder, co-founder, CTO</span></span>
+      <span class="tl-result">Sold Tesser Health, GetPlano and ClinicCover; $8M Series A at EyeCheq; CTO of ELMC Rx 2019&ndash;2025</span>
+    </li>
+    <li class="reveal">
+      <span class="tl-years">2007&ndash;2014</span>
+      <span class="tl-where"><strong>South Florida startups</strong><span class="tl-role">Founder, CTO</span></span>
+      <span class="tl-result">Founded Not Going to Lie; founded PxSource, acquired by Revolution EHR in 2014</span>
+    </li>
+    <li class="reveal">
+      <span class="tl-years">2000&ndash;2006</span>
+      <span class="tl-where"><strong>EisenWorld</strong><span class="tl-role">Director of Product Development</span></span>
+      <span class="tl-result">Company acquired by Microsoft</span>
+    </li>
+    <li class="reveal">
+      <span class="tl-years">1996&ndash;2000</span>
+      <span class="tl-where"><strong>NASA Kennedy Space Center</strong><span class="tl-role">Consultant</span></span>
+      <span class="tl-result">SAGE and Expert Seeker, adopted by NASA</span>
+    </li>
+  </ol>
+</section>
+
 <!-- Contact -->
 <section id="contact" aria-labelledby="contact-title">
   <div class="contact-inner">
-    <div class="section-label reveal">007 / Contact</div>
+    <div class="section-label reveal">006 / Contact</div>
     <h2 id="contact-title" class="section-title reveal">Let's <em>connect</em></h2>
     <p class="contact-lede reveal">I'm open to advisory engagements, civic-tech pilots, board roles, and speaking &mdash; particularly at the crossover of healthcare, public infrastructure, and emerging technology.</p>
     <div class="contact-actions reveal">
