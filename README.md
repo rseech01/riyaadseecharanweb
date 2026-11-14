@@ -173,6 +173,14 @@ Every dated/factual claim on the site, in one place. When facts change, update b
 | Baptist Health | Knight Innovation Fellow | **2025–2026 cohort**; focus: 30-day post-discharge readmission insights |
 | Seecharan Group | Founder | Advisory + board for early-stage founders, plus product / strategy sprints; healthcare and civic-tech crossover |
 
+### Applications built and sold (Applications section)
+
+| Application | Role | Detail |
+|---|---|---|
+| PxSource | President | Patient engagement and communication software for eye care (Health Lyriqs, Smart Triage); acquired by RevolutionEHR |
+| GetPlano | Co-Founder & CTO, 2018–2023 | Electronic health records platform; acquired by Barti Software |
+| ClinicCover | Co-Founder & CTO, 2018–2023 | Healthcare IT platform for provider operations; acquired by Barti Software |
+
 ### Community involvements (Community section)
 
 | Org | Role | Dates | Status | Notable |
