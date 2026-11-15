@@ -162,7 +162,7 @@ Every dated/factual claim on the site, in one place. When facts change, update b
 | 2000 – 2006 | EisenWorld → Microsoft | Director of Product Development; PC migration tool; shipped inside Windows 7; company acquired by Microsoft |
 | 2007 – 2013 | Between Acts | South Florida startup work; **Not Going to Lie** (founded 2011, social media app); **PxSource** (founded 2013, acquired by RevolutionEHR in 2014) |
 | 2014 – Present | Healthcare Technology | **Tesser Health** (founded 2014, acquired by ELMC Rx); **EyeCheq** (co-founder and CPO, ~$8M Series A, $40M valuation); **ClinicCover, GetPlano, EHR** (co-founded; all acquired by Barti Software) |
-| 2024 | Education | BA, Florida International University (finished mid-career) |
+| 2024 | Education | BA, Florida International University (finished mid-career; had earlier left one course short of a CS degree) |
 | Now | Civic Innovation | MDIA Public Innovation Challenge pilots — water and sewer (No. 8), emergency management (No. 7), housing (No. 6), waste diversion (No. 5); 2.7M Miami-Dade residents |
 
 ### Current ventures (Ventures section)
