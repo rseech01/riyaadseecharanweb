@@ -188,7 +188,7 @@ Logos for the three application cards live in `assets/logos/` (upscaled from low
 | Org | Role | Dates | Status | Notable |
 |---|---|---|---|---|
 | AIRIE (Artists in Residence in Everglades) | Board Member · Past Chair | **2021 – present** (chair **2023 – 2024**) | Current | Helped bring residency to Venice Biennale (2023) and Cooper Hewitt (2024) |
-| Genius Factory | Founder | **2014 – 2020** (programming) | Inactive | STEM + leadership programming for middle-school kids in Overtown's Williams Park |
+| Genius Factory | Founder | **2014 – 2019** (programming) | Inactive | STEM + leadership programming for middle-school kids in Overtown's Williams Park |
 | Venture Café Miami | Board Member | **2017 – 2018** | Past | Strategic guidance + taught classes within programming |
 | PS 305 | Strategic Advisor | **2021 – 2022** | Past | Strategy, operations, communications, action planning |
 
