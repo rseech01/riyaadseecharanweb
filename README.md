@@ -160,7 +160,7 @@ Every dated/factual claim on the site, in one place. When facts change, update b
 |---|---|---|
 | 1996 – 2000 | NASA Kennedy Space Center | Center for Innovation and Knowledge Management; SAGE; Expert Seeker; ISS intranet prototypes |
 | 2000 – 2006 | EisenWorld → Microsoft | Director of Product Development; PC migration tool; shipped inside Windows 7; company acquired by Microsoft |
-| 2007 – 2013 | Between Acts | South Florida startup work; **Not Going to Lie** (founded 2011, social media app); **PxSource** (founded 2013, acquired by Revolution EHR in 2014) |
+| 2007 – 2013 | Between Acts | South Florida startup work; **Not Going to Lie** (founded 2011, social media app); **PxSource** (founded 2013, acquired by RevolutionEHR in 2014) |
 | 2014 – Present | Healthcare Technology | **Tesser Health** (founded 2014, acquired by ELMC Rx); **EyeCheq** (co-founder and CPO, ~$8M Series A, $40M valuation); **ClinicCover, GetPlano, EHR** (co-founded; all acquired by Barti Software) |
 | Now | Civic Innovation | MDIA Public Innovation Challenge pilots — water and sewer (No. 8), emergency management (No. 7), housing (No. 6), waste diversion (No. 5); 2.7M Miami-Dade residents |
 
@@ -228,7 +228,7 @@ Comprehensive review across SEO, accessibility, narrative, content, brand, front
 ### What changed
 
 1. **Contact section added** — new `005 / Contact` section before footer with primary CTA (email, JS-obfuscated) and secondary LinkedIn button. The site previously had no contact path.
-2. **Timeline gap filled** — new `2007–2013 · Between Acts` node added covering startup work, the launch of Not Going to Lie (2011), and the founding of PxSource (2013) and its acquisition by Revolution EHR (2014). PxSource was previously misattributed to the 2014–Present block.
+2. **Timeline gap filled** — new `2007–2013 · Between Acts` node added covering startup work, the launch of Not Going to Lie (2011), and the founding of PxSource (2013) and its acquisition by RevolutionEHR (2014). PxSource was previously misattributed to the 2014–Present block.
 3. **SEO + AEO foundations** — added `<title>`, meta description, canonical, robots, Open Graph (8 tags + profile sub-properties), Twitter Card, favicon, theme-color, font preconnect, and three JSON-LD blocks (Person, WebSite, FAQPage). New files: `favicon.svg`, `og-image.svg`, `og-image.png`, `robots.txt`, `sitemap.xml`.
 4. **WCAG 2.2 AA fixes** — `--teal` darkened from `#2A9D8F` (2.74:1 fail) to `#1F7268` (5.23:1 pass); new `--coral-text` for small-text contexts; global `:focus-visible` styles; skip link; `<main>` landmark; `aria-label` on nav; `aria-labelledby` on every section; `aria-hidden` on decorative emojis/icons; `<span lang="fr">` on Café; `prefers-reduced-motion` block; `<noscript>` reveal fallback; mobile touch targets; footer copy contrast 2.40:1 → 5.46:1; community paragraph opacity 0.6 → 0.78; speaking-tag color 0.65 → 0.82.
 5. **Heading hierarchy fixed** — `.section-title` divs converted to proper `<h2>` (5 of them); community `<h4>` items promoted to `<h3>`. Outline now: 1 h1 → 5 h2 → 13 h3.
