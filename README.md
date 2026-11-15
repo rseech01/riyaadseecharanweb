@@ -205,7 +205,7 @@ Logos for the three application cards live in `assets/logos/` (upscaled from low
 
 ### Speaking appearances (tags in Community section) — *no event-page links yet*
 
-SIAA Charlotte · CoMotion Miami · Health 2.0 · AARP Innovation 50 · Global Wellness Institute · Ignite Miami
+SIAA Charlotte · CoMotion Miami · Cities Today · Health 2.0 · AARP Innovation 50 · Global Wellness Institute · Ignite Miami
 
 ### Where each fact lives in the HTML (sync points)
 
@@ -252,6 +252,6 @@ Comprehensive review across SEO, accessibility, narrative, content, brand, front
 
 - Stat block numbers (`$81M+ Venture Value Created`, `8 Companies Founded`, `4 Successful Exits`) were carried forward unchanged — not independently audited.
 - EyeCheq financials (`$8M Series A`, `$40M valuation`) carried forward unchanged.
-- Speaking tags (SIAA Charlotte, CoMotion Miami, Health 2.0, AARP Innovation 50, Global Wellness Institute, Ignite Miami) are inert `<div>`s with no event-page links — converting to anchor links would help AI-citation.
+- Speaking tags (SIAA Charlotte, CoMotion Miami, Cities Today, Health 2.0, AARP Innovation 50, Global Wellness Institute, Ignite Miami) are inert `<div>`s with no event-page links — converting to anchor links would help AI-citation.
 - Only LinkedIn is in the `sameAs` array. Adding Crunchbase, X, GitHub, MDIA team page, etc. is the highest-leverage AEO improvement available.
 - No press / news section exists. Adding 3-5 outbound links to articles, podcasts, or panels would significantly improve AI-citation likelihood for unbranded queries.
