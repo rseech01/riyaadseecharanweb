@@ -188,7 +188,7 @@ Logos for the three application cards live in `assets/logos/` (upscaled from low
 | Org | Role | Dates | Status | Notable |
 |---|---|---|---|---|
 | AIRIE (Artists in Residence in Everglades) | Board Member (current) · Past Co-Chair & President | **2021 – present** (finance, technology & HR chair **2022 – 2023**; co-chair & president **2023 – 2024**) | Current | Cooper Hewitt Design Triennial "Ebb + Flow" (2024–25); Venice Biennale (2024); Art + Environment Summit (2022); budget +35% over three years |
-| Genius Factory | Founder | **2014 – 2019** (programming) | Inactive | STEM + leadership programming for middle-school kids in Overtown's Williams Park |
+| Genius Factory | Founder | **2014 – 2019** (programming) | Inactive | STEAM, design and entrepreneurship programs for kids in Overtown and Allapattah; partners incl. Ashoka Youth Venture, Breakthrough Miami, St. Thomas University, UM Miller School, The LAB Miami; Wege Foundation grant; 400+ students |
 | Venture Café Miami | Board Member | **2017 – 2018** | Past | Strategic guidance + taught classes within programming |
 | PS 305 | Strategic Advisor | **2021 – 2022** | Past | Strategy, operations, communications, action planning |
 
@@ -197,8 +197,8 @@ Logos for the three application cards live in `assets/logos/` (upscaled from low
 | Stat | Value |
 |---|---|
 | Venture Value Created | $81M+ |
-| Capital Raised | $8M |
-| Companies Founded | 5+ |
+| Capital Raised | $9M |
+| Companies Founded | 8 |
 | Successful Exits | 4 |
 
 ### Speaking appearances (tags in Community section) — *no event-page links yet*
@@ -248,7 +248,7 @@ Comprehensive review across SEO, accessibility, narrative, content, brand, front
 
 ### Known TODOs / unverified claims
 
-- Stat block numbers (`$81M+ Venture Value Created`, `5+ Companies Founded`, `4 Successful Exits`) were carried forward unchanged — not independently audited.
+- Stat block numbers (`$81M+ Venture Value Created`, `8 Companies Founded`, `4 Successful Exits`) were carried forward unchanged — not independently audited.
 - EyeCheq financials (`$8M Series A`, `$40M valuation`) carried forward unchanged.
 - Speaking tags (SIAA Charlotte, CoMotion Miami, Health 2.0, AARP Innovation 50, Global Wellness Institute, Ignite Miami) are inert `<div>`s with no event-page links — converting to anchor links would help AI-citation.
 - Only LinkedIn is in the `sameAs` array. Adding Crunchbase, X, GitHub, MDIA team page, etc. is the highest-leverage AEO improvement available.
