@@ -203,7 +203,7 @@ Logos for the three application cards live in `assets/logos/` (upscaled from low
 | Companies Founded | 8 |
 | Successful Exits | 4 |
 
-### Speaking appearances (tags in Community section) — *no event-page links yet*
+### Speaking appearances (tags at the end of the Track Record section) — *no event-page links yet*
 
 SIAA Charlotte · CoMotion Miami · Cities Today · Health 2.0 · AARP Innovation 50 · Global Wellness Institute · Ignite Miami
 
