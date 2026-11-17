@@ -160,7 +160,7 @@ Every dated/factual claim on the site, in one place. When facts change, update b
 |---|---|---|
 | 1996 – 2000 | NASA Kennedy Space Center | Center for Innovation and Knowledge Management; SAGE; Expert Seeker; ISS intranet prototypes |
 | 2000 – 2006 | EisenWorld → Microsoft | Director of Product Development; PC migration tool; shipped inside Windows 7; company acquired by Microsoft |
-| 2007 – 2013 | Between Acts | South Florida startup work; **Not Going to Lie** (founded 2011, social media app); **PxSource** (founded 2013, acquired by RevolutionEHR in 2014) |
+| 2007 – 2013 | Between Acts | South Florida startup work; **Not Going to Lie** (founded 2011, social media app); **PxSource** (founded 2013, acquired by RevolutionEHR in 2014; tools reached 130M+ users on its platform) |
 | 2014 – Present | Healthcare Technology | **Tesser Health** (founded 2014, acquired by ELMC Rx); **EyeCheq** (co-founder and CPO, ~$8M Series A; kiosk designed by Nottingham Spirk; iCare / Revenio Group strategic minority investor, 2026); **ClinicCover, GetPlano, EHR** (co-founded; all acquired by Barti Software) |
 | 2018 – 2022 | Operations | **Good Doc** COO: five-location optometry practice, 20+ doctors; later shut down to start EyeCheq (Track Record card) |
 | 2024 | Education | BA, Florida International University (finished mid-career; had earlier left one course short of a CS degree) |
@@ -179,7 +179,7 @@ Every dated/factual claim on the site, in one place. When facts change, update b
 | Application | Role | Detail |
 |---|---|---|
 | PxSource | President | Patient engagement and communication software for eye care (Health Lyriqs, Smart Triage); acquired by RevolutionEHR |
-| Tesser Health | Founder & CEO | Behavioral-science software to cut pharmacy and medical spend for self-insured employers; $1M across seed rounds, led by Cofounders Capital; acquired by ELMC Rx |
+| Tesser Health | Founder & CEO | Behavioral-science software to cut pharmacy and medical spend for self-insured employers; $1M across seed rounds, led by Cofounders Capital; acquired by ELMC Rx; ELMC Rx platform served 1M+ covered lives |
 | GetPlano | Co-Founder & CTO, 2018–2023 | EHR for retail optometric practices; acquired by Barti Software |
 | ClinicCover | Co-Founder & CTO, 2018–2023 | On-demand optometric doctor platform for optometry practices; acquired by Barti Software |
 
