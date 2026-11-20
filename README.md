@@ -180,6 +180,7 @@ Every dated/factual claim on the site, in one place. When facts change, update b
 |---|---|---|
 | PxSource | President | Patient engagement and communication software for eye care (Health Lyriqs, Smart Triage); acquired by RevolutionEHR |
 | Tesser Health | Founder & CEO | Behavioral-science software to cut pharmacy and medical spend for self-insured employers; $1M across seed rounds, led by Cofounders Capital; acquired by ELMC Rx; ELMC Rx platform served 1M+ covered lives |
+| ELMC Rx Solutions | CTO 2019–2025 | Prior authorization platform; platform served 1M+ covered lives; technical debt cut 20%; AI-driven analytics (card uses a text label, no logo yet) |
 | GetPlano | Co-Founder & CTO, 2018–2023 | EHR for retail optometric practices; acquired by Barti Software |
 | ClinicCover | Co-Founder & CTO, 2018–2023 | On-demand optometric doctor platform for optometry practices; acquired by Barti Software |
 
@@ -190,6 +191,7 @@ Logos for the three application cards live in `assets/logos/` (upscaled from low
 | Org | Role | Dates | Status | Notable |
 |---|---|---|---|---|
 | AIRIE (Artists in Residence in Everglades) | Board Member (current) · Past Co-Chair & President | **2021 – present** (finance, technology & HR chair **2022 – 2023**; co-chair & president **2023 – 2024**) | Current | Cooper Hewitt Design Triennial "Ebb + Flow" (2024–25); Venice Biennale (2024); Art + Environment Summit (2022); budget +35% over three years |
+| Earlier service | Volunteer, 2003–2008 | City of Hollywood PAL martial arts instructor (2003–2006); 100+ ER volunteer hours, Memorial Hospital East (2007–2008) |
 | Genius Factory | Founder | **2014 – 2019** (programming) | Inactive | STEAM, design and entrepreneurship programs for kids in Overtown and Allapattah; partners incl. Ashoka Youth Venture, Breakthrough Miami, St. Thomas University, UM Miller School, The LAB Miami; Wege Foundation grant; 600 students |
 | Venture Café Miami | Board Member | **2017 – 2018** | Past | Strategic guidance + taught classes within programming |
 | PS 305 | Strategic Advisor | **2021 – 2022** | Past | Strategy, operations, communications, action planning |
