@@ -180,7 +180,7 @@ Every dated/factual claim on the site, in one place. When facts change, update b
 |---|---|---|
 | PxSource | President | Patient engagement and communication software for eye care (Health Lyriqs, Smart Triage); acquired by RevolutionEHR |
 | Tesser Health | Founder & CEO | Behavioral-science software to cut pharmacy and medical spend for self-insured employers; $1M across seed rounds, led by Cofounders Capital; acquired by ELMC Rx; ELMC Rx platform served 1M+ covered lives |
-| ELMC Rx Solutions | CTO 2019–2025 | Prior authorization platform; platform served 1M+ covered lives; technical debt cut 20%; AI-driven analytics (card uses a text label, no logo yet) |
+| ELMC Rx Solutions | CTO 2019–2025 | Prior authorization platform; platform served 1M+ covered lives; technical debt cut 20%; AI-driven analytics |
 | GetPlano | Co-Founder & CTO, 2018–2023 | EHR for retail optometric practices; acquired by Barti Software |
 | ClinicCover | Co-Founder & CTO, 2018–2023 | On-demand optometric doctor platform for optometry practices; acquired by Barti Software |
 
